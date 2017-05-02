@@ -1,16 +1,15 @@
---- 
-title_meta  : Chapter 9
-title       : Programming basics 
+---
+title       : Just some title to make this work in Datacamp
 description : 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba015a0cbd
-## 1. Conditional expressions 
+## 1. Conditional expressions
 
 What will this conditional expression return?
-Run it from the console. 
+Run it from the console.
 
 ```{r}
-x <- c(1,2,-3,4) 
+x <- c(1,2,-3,4)
 if(all(x>0 & x<10)){
   print("All between 0 and 10 (non-inclusive)")
 }else{
@@ -22,7 +21,7 @@ if(all(x>0 & x<10)){
 - All between 0 and 10 (non-inclusive)
 - Some are out of range
 - N/A
-- None of the above 
+- None of the above
 
 *** =hint
 Are all the numbers stored in `x` between 0 and 10?
@@ -54,9 +53,9 @@ Which of the following expressions is always `TRUE` when at least one entry of a
 
 
 *** =instructions
-- all(x) 
-- any(x) 
-- any(!x) 
+- all(x)
+- any(x)
+- any(!x)
 - all(!x)
 
 *** =hint
@@ -141,7 +140,7 @@ You will encounter situations where the function you need has not been defined i
 
 *** =instructions
 Create a function `max_total` that takes `murders` as the argument and tells you which state has the most gun murders. Remember to use built-in function `max`.
- 
+
 *** =hint
 Use `$` and `[]` on `murders` in the body of your function to determine which state has the most gun murders.
 
@@ -196,7 +195,7 @@ The functions you define can have multiple arguments as well as default values. 
 
 *** =instructions
 Create a function `nplus_states` that takes `murders` as an argument and for any given `n`, prints the name of the states that have more than `n` gun murders. Set the default value of `n` to be 100.
- 
+
 *** =hint
 
 *** =pre_exercise_code
@@ -245,7 +244,7 @@ Keep in mind that variables defined in a function only hold within the function 
 
 *** =instructions
 
-After running the code below, what are the values of `x` and `y`? 
+After running the code below, what are the values of `x` and `y`?
 
 ```{r}
 x <- 3
@@ -287,7 +286,7 @@ y<-1
 test_error()
 test_object("x", incorrect_msg = "The default value of a variable is only valid within the scope of the function!")
 test_object("y", incorrect_msg = "Be mindful where `y` is called!")
-success_msg("Good job!") 
+success_msg("Good job!")
 ```
 
 
@@ -302,8 +301,8 @@ Recall from an earlier exercise that we wrote a function to find out the state w
 When you start writing more complicated functions, you’ll find breaking down the steps and creating new variables along the way to be very helpful. And don’t worry about messing up your working environment because all variables defined within a function are only valid when the function is being called!
 
 *** =instructions
-Create a function `max_rate` that takes `murders` as the argument and tells you which state has the highest murder rate. 
- 
+Create a function `max_rate` that takes `murders` as the argument and tells you which state has the highest murder rate.
+
 *** =hint
 Create a new variable `murder_rate` and append it to the `murders` data set so you can use its values in the conditional expression.
 
@@ -411,7 +410,7 @@ success_msg("Whoohoo! You're becoming a pro at this!")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:cb64a8f82d
 
-## 9. Check matching of values 
+## 9. Check matching of values
 
 *** =instructions
 Confirm that the result of the for loop in the last exercise (`new_names2`) is identical to the result of the `ifelse()` function in exercise 3 (new_names). Both values are pre-loaded into your environment.
@@ -478,7 +477,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 
 *** =sample_code
 ```{r}
-#  Create the function 
+#  Create the function
 
 
 # Create the plot when n=5
@@ -487,7 +486,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 
 *** =solution
 ```{r}
-#  Create the function 
+#  Create the function
 dangerous<-function(data, n){
 	x <- vector()
 	y <- vector()

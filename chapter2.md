@@ -1,7 +1,6 @@
-title : Data-types author_field : description : In this course we introduce you the basics of computing and analyzing data in the 
-user-friendly and helpful R interface. This chapter introduce to you different data types and how to work with them in R. author_bio : 
-Bo W. is a TA for this course. university : Brown University difficulty level : 1 
-time needed : Approximately 1 hour for each module programming language : R 
+---
+title       : Just some title to make this work in Datacamp
+description :
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:b0bd1a7eb3
 
@@ -85,7 +84,7 @@ class(murders$total)
 *** =sct
 
 test_output_contains(c("class(murders$region)", "class(murders$state)", "class(murders$population)",
-                       "class(murders$region)", "class(murders$region)"), 
+                       "class(murders$region)", "class(murders$region)"),
                        incorrect_msg = "Make sure you check all five variables!")
 success_msg("That was great! Now you know the data types of all variables in your data set!")  
 test_error()
@@ -104,7 +103,7 @@ In the last exercise you found out that the type of the region variable is "fact
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
 *** =sample_code
 
-# Use nlevels() to find out the number of levels in region 
+# Use nlevels() to find out the number of levels in region
 
 *** =solution
 

@@ -1,17 +1,21 @@
---- type:NormalExercise lang:r xp:100 skills:1 key:646acee888
-## 1. Changing Measurements 
+---
+title       : Just some title to make this work in Datacamp
+description :
 
-Previously we created these data frames - 
+--- type:NormalExercise lang:r xp:100 skills:1 key:646acee888
+## 1. Changing Measurements
+
+Previously we created these data frames -
 `desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")`
 `calories <- c(257, 355, 243, 411, 288)`
 `desserts_calories <- data.frame(Dessert = desserts, Calorie = calories)`
 
 *** =instructions
-Remake the dataframes using the code from above. 
-However, add a line of code that changes the calories of these desserts from calorie units to joules. 
+Remake the dataframes using the code from above.
+However, add a line of code that changes the calories of these desserts from calorie units to joules.
 (1 cal = 4.18 joules)
 Store it in `joules`.
-Include `desserts, calories, joules, desserts_joules` in the code. 
+Include `desserts, calories, joules, desserts_joules` in the code.
 
 *** =hint
 *** =pre_exercise_code
@@ -53,13 +57,13 @@ success_msg("Awesome!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:b7994768fd
-## 2. Sum and Seq 
+## 2. Sum and Seq
 
-Let's use the functions of sequence and sum that we've learnt earlier. 
+Let's use the functions of sequence and sum that we've learnt earlier.
 
 *** =instructions
 What is the sum of the following :
-`1 + 1/(2^3) + 1/ (3^3) +...+ 1/(2500^3)`? 
+`1 + 1/(2^3) + 1/ (3^3) +...+ 1/(2500^3)`?
 
 *** =hint
 Use code: `x <- seq(1,2500)`
@@ -67,7 +71,7 @@ Use code: `x <- seq(1,2500)`
 
 *** =pre_exercise_code
 ```{r}
-# no pec 
+# no pec
 ```
 
 *** =sample_code
@@ -81,7 +85,7 @@ Use code: `x <- seq(1,2500)`
 # Create a sequence of numbers from 1-2500 and store it in `x`
 x <- seq(1,2500)
 
-# Use the `sum` command to answer the question 
+# Use the `sum` command to answer the question
 sum (1/ x^3)
 ```
 *** =sct
@@ -99,7 +103,7 @@ success_msg("")
 
 
 *** =instructions
-Compute the per 100,000 murder rate for each state and store it in the object `murder_rate`. 
+Compute the per 100,000 murder rate for each state and store it in the object `murder_rate`.
 Then compute the average murder rate for the US using the function `mean`. What is the average?
 
 *** =hint
@@ -114,7 +118,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 # Store the per 100,000 murder rate for each state in `murder_rate`
 
 
-# Calculate the average murder rate in the US 
+# Calculate the average murder rate in the US
 
 
 ```
@@ -138,4 +142,3 @@ success_msg("Awesome!")
 
 ```
 ----
- 

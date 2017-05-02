@@ -1,10 +1,14 @@
+---
+title       : Just some title to make this work in Datacamp
+description :
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:4c6d0d3bc3
-## 1. Scatterplot 
+## 1. Scatterplot
 
 We’re using the same dataset as we did in the chapter on `Sorting` - `RatPupWeight`.
 
 *** =instructions
-Store the value of the rats' weights in `weight`, and the number of pups per litter in `lsize`. 
+Store the value of the rats' weights in `weight`, and the number of pups per litter in `lsize`.
 
 Create a scatterplot of the weights of the ratpups with the size of the litter they were born in.  
 
@@ -51,11 +55,11 @@ success_msg("Doesn't that plot look neat!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4c598008e7
-## 2. Histogram 
+## 2. Histogram
 
 
 *** =instructions
-Create a histogram of the weights of the rat pups. 
+Create a histogram of the weights of the rat pups.
 
 *** =hint
 ```{r}
@@ -99,7 +103,7 @@ success_msg("We got a histogram! Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:126ec89fd8
-## 3. Boxplot 
+## 3. Boxplot
 
 
 *** =instructions
@@ -119,17 +123,17 @@ data(RatPupWeight)
 
 *** =sample_code
 ```{r}
-# Store values as in previous questions 
+# Store values as in previous questions
 weight<-
-sex <- 
+sex <-
 
-# Create a boxplot of weight by sex and specify the dataset 
+# Create a boxplot of weight by sex and specify the dataset
 
 ```
 
 *** =solution
 ```{r}
-# Create a boxplot of weight by sex and specify the dataset 
+# Create a boxplot of weight by sex and specify the dataset
 boxplot(weight~sex, dataset = RatPupWeight)
 
 ```
@@ -141,5 +145,3 @@ test_function("boxplot", incorrect_msg = "Check code. use ~ sign and include dat
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 ```
 ----
-
-
