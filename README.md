@@ -1,2 +1,2 @@
-# IDS---Module-1---Extra-Exercises
-This contains 5 sets of alternate exercises for Module 1 of the IDS course. 
+# IDS-Module1-alt3
+This contains the third iteration of exercises for Module 1. 
