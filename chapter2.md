@@ -18,7 +18,7 @@ In this series of exercises, we examine the murders data set (already loaded in 
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
 ```
 *** =sample_code
-```{r
+```{r}
 # Use the str() function to check the structure of murders
 ```
 *** =solution
