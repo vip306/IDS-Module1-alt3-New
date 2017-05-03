@@ -1,5 +1,5 @@
 ---
-title       : Just some title to make this work in Datacamp
+title       : 9. Programming Basics
 description : 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba015a0cbd
@@ -187,7 +187,7 @@ success_msg("This is awesome! You just wrote a function in R!")
 
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:8232e54e7b
+--- type:NormalExercise lang:r xp:100 skills:1 key:eb931680e3
 
 ## 5. Write your own functions continued
 
@@ -292,7 +292,7 @@ success_msg("Good job!")
 
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:8232e54e7b
+--- type:NormalExercise lang:r xp:100 skills:1 key:75bc32926c
 
 ## 7. Define a variable within your function
 
@@ -351,7 +351,7 @@ success_msg("This is awesome! You can write much cooler functions now!")
 
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:9e33032243
+--- type:NormalExercise lang:r xp:100 skills:1 key:340b9eba39
 ## 8. Control flow statement: for loop
 
 Recall that in an earlier exercise, you changed the names of states that begins with an "M" or a letter that comes after "M" to lower case using the `ifelse()` function. Now do the same with an `if()` statement and a for loop.  

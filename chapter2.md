@@ -1,5 +1,5 @@
 ---
-title       : Just some title to make this work in Datacamp
+title       : 2. Data Types
 description :
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:b0bd1a7eb3
@@ -88,7 +88,7 @@ test_output_contains(c("class(murders$region)", "class(murders$state)", "class(m
                        incorrect_msg = "Make sure you check all five variables!")
 success_msg("That was great! Now you know the data types of all variables in your data set!")  
 test_error()
---- type:NormalExercise lang:r xp:100 skills:1,3 key:d6e46d357d
+--- type:NormalExercise lang:r xp:100 skills:1,3 key:0126dd4245
 
 4. Factors
 
@@ -114,7 +114,7 @@ nlevels(murders$region)
 test_output_contains("nlevels(murders$region)", incorrect_msg="Make sure you spell `nlevels()` correctly!")
 success_msg("That was great! Let’s head over to the next exercise!")  
 test_error()
---- type:NormalExercise lang:r xp:100 skills:1,3 key:d6e46d357d
+--- type:NormalExercise lang:r xp:100 skills:1,3 key:f4b43c38fc
 
 5. Lists in R
 

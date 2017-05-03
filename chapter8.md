@@ -1,5 +1,5 @@
 ---
-title       : Just some title to make this work in Datacamp
+title       : 8. Basic Plots
 description :
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4c6d0d3bc3

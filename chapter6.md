@@ -1,5 +1,5 @@
 ---
-title       : Indexing
+title       : 6. Indexing
 description : R provides a powerful and convenient way of indexing vectors. We're going to learn some ways of doing that!
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:6bb68b8400

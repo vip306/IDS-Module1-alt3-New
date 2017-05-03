@@ -1,5 +1,5 @@
 ---
-title       : Just some title to make this work in Datacamp
+title       : 5. Vector Arithmetics
 description :
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:646acee888

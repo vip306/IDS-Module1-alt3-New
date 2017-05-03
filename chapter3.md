@@ -1,5 +1,5 @@
 ---
-title       : Just some title to make this work in Datacamp
+title       : 3. Vectors
 description :
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ddf0db0f7d

@@ -1,5 +1,5 @@
 ---
-title       : Basic Data Manipulation Ex. 2
+title       : 7. Basic Data Manipulation
 description : Just as the name suggests, we're going to practice the basics of data manipulation here.
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa7b6092fb

@@ -1,5 +1,5 @@
 ---
-title       : Sorting
+title       : 4. Sorting
 description : This chapter deals with getting more of an insight into the data we have, by helping us sort through it
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f2c94437a4

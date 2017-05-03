@@ -1,5 +1,5 @@
 ---
-title       : Just some title to make this work in Datacamp
+title       : 1. R Basics
 description :
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bf96ea1498
