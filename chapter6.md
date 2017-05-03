@@ -175,7 +175,7 @@ success_msg("Good job!")
 
 *** =instructions
 
-Now extend the code from exercise 2 and 3 to report the weight of the woman whose height is 60 inches with weight rates lower than 2.
+Now extend the code from exercise 2 and 3 to report the weight of the women whose height is 60 inches with weight rates lower than 2.
 For example: `low & food$courses=="Deserts"`, would give us the deserts from the courses variable in the food dataset.  
 
 
