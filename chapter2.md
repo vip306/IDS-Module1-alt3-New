@@ -13,8 +13,9 @@ In this series of exercises, we examine the murders data set (already loaded in 
 *** =hint murders is now an R object and therefore does not need the quotations marks to be referred to.
 
 *** =pre_exercise_code
-
+```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+```
 *** =sample_code
 
 # Use the str() function to check the structure of murders
