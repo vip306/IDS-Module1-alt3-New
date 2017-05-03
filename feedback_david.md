@@ -78,8 +78,7 @@ Error: there is no package called 'nmle'
 * Error in title of exercise? "3. New Codes" Instead should be something about the new command users are learning
 * "Write one line of code that gives the index of the lowest population entry". What population data? Refers to different iteration?
 *  sample_code: Murders example is confusing (user doesn't know where it comes from and what it has to do with the weight data. And it doesn't run:
-``> which.min(murders$total)
-# Error: object 'murders' not found``
+`> which.min(murders$total) # Error: object 'murders' not found`
 * The object `weight` is undefined, so one cannot complete this exercise without first defining it. Either make clear in the instructions that user has to define it, or preload it in sample code. The solution uses RatPupWeight$weight, which is confusing since it's different from the previous exercises where we defined a separate object (`weight`)
 * Comment is ambiguous: "# Find the smallest value for `weight`". But really, what we are asking for is the *index* of the vector, not the *value*
 #### Ex 4
@@ -124,6 +123,64 @@ sum(1/(x^3))``
   
 ### Chapter 6: Indexing
 #### Ex 1
-* "We’re using the same dataset as we did in the chapter on Sorting - women." - I don't thin this dataset was used in this iteration?
-* Conflicting instructions and sample_code... One refers to trees, one to women
-* Instructions: Why does it say "lower than its mean of 2?" The mean of the data is not 2, it's approximately 2.098. Change to just "lower than 2".
+* "We’re using the same dataset as we did in the chapter on Sorting - women." - I don't think this dataset was used in this iteration?
+* Conflicting terminology in instructions and sample_code... One refers to trees, one to women
+* Instructions: Why does it say "lower than its mean of 2?" The mean of the data is not 2, it's approximately 2.098. Change to just "lower than 2"?
+#### Ex 2
+* Also mistake in terminology (trees/women)
+* "Store the `weight_rate < 2` in `low`" basically gives the answer away. I'd change to: "Create a vector `low` that is TRUE if an observation has a weight_rate below 2
+* Left hand side should explain what `which` does, i.e. that it creates a vector of TRUE/FALSE, which can then in turn be used to select entries of another vector
+#### Ex 4
+* Error in console: "Runtime error. Object `low` not found."
+* "Coder" language in comments might be hard to understand for beginners: "# Store height=60in, with weight rates lower than 2 in `ind`" - change to "Store observations 60 in tall and have a `weight_rate` below 2 in the object `ind`"
+* Mistake in instructions: "low & food$courses=="Deserts", would give us the deserts from the courses variable in the food dataset." Not quite true, it only gives the indices of that vector. To get the values, we have to combine this with the repsective object the the `[]` brackets.
+#### Ex 5
+* Error in console: "Runtime error. Object `weight_rate` not found."
+* Sample code: "How many women are > avg ? " - Confusing phrasing. Comments should be simple and self-explanatory, particularly to R beginners.
+#### Ex 6
+* "Coder" language in comments might be hard to understand for beginners: "# Store height=60in, with weight rates lower than 2 in `ind`" - change to "Store observations that are less than 60 in and weight rates below 2 in the object `ind`"
+* Show in sample code that the dataset was loaded in and in what dataframe it was stored. Use dslabs package
+* "(remember that they are character vectors)" -> There is only one character vector. Change to "Remember that the abbreviations are of class "character").
+* "# Match the abbs to the murders$abb and store in `ind`"
+* I'd use a more transparent name for variable `ind`, perhaps `index`
+* Explain the columns of the murders dataframe. Otherwise it's unclear where the state names are stored and the exercise is hard to finish
+#### Ex 7
+* Terminology: `%in%` is not a function, it's an operator
+### Ex 8
+* sample_code: Annoying for user since they have to go back to the previous exercise to look up the entries of the `abbs` vector. Just add that first line to the code: `abbs <- c("ND", "NE", "NM", "NN", "NY")`
+* The last step is not obvious: "# Names of abbs in `ind`". Make explicit that you would like the user to display the name of the one abbreviation in `abbs` that is not part of the `murders` dataframe.
+
+
+### Chapter 8: Basic plots
+#### Ex 1
+* `Error: there is no package called 'nmle'`
+* Provide more detail about the content of the dataset. For example, in which column in `RatPupWeight` is the litter size stored? Otherwise not clear to user how to store those values
+* Scatterplot: Either be explicit about which variable should be on X/Y axes, or accept alternative answer where lsize is on the X axis: `plot(lsize, weight)`
+* I'd also accept the alternative solutions `plot(weight ~ lsize)` and `plot(lsize ~ weight)`
+#### Ex 2
+* `Runtime error: there is no package called 'nmle'`, exercise does not run or accept solutions
+#### Ex 3
+* "# Store values as in previous questions" - forces user to go back, just fill it in for them: 
+` weight <- RatPupWeight$weight`
+`lsize <- RatPupWeight$Lsize`
+* Header of sample_code should contain the name of the dataframe we are working with so that users don't have to go back when they write `data = RatPupWeights` in the boxplot command
+* Again, a runtime error due to package `nmle`, cannot submit solution
+
+### Chapter 9: Programing Basics
+#### Ex 1
+* Too easy? User can just copy code into console and look at the output without thinking about the structure of the code. Can we turn the console off?
+### Ex 2
+* Cannot submit response, runtime error in console. I think there is some error in the SCT
+### Ex 3
+* I really like this exercise, it's quite challenging. Maybe explain to user that they can use the `<, >` operators on character vectors just like on numeric vectors. So to select letters before and including M they can use `<= "M"`.  I didn't even know this.
+* I would not use `append`, not clear to new users. Instead "add `new_names` as a new column to the dataframe `murders`"
+* Can't submit answer, some error in SCT: Runtime error in console
+### Ex 4
+* Is it possible in Datacamp to have the function run over several lines? When I tried it it didn't work, but I think it looks very cluttered in one line. I guess it's also good practice to format functions so that they go over several lines since that seems to be the norm in R.
+#### Ex 5
+* Hint: What is "rate_per_n(murders)"? 
+* My answer was not accepted as correct, not sure why: `nplus_states <- function(x, n=100) { x[x$total > n,]$state }`
+* Actually, it looks like the SCT does not even accept the hardcoded solution as the answer. Error message: "Did your code produce the same output as rate_per_n(murders)?"
+### Ex 6
+* Do you want the students to actually run the code in the console or just look at it and figure the answer out theoretically? If you want them to run the code, I think they may encounter the issue I mentioned above, i.e. that Datacamp does not seem to handle function statements that go over several lines, thus you can't just copy in the code from the left hand side
+* I don't understand why the answer is x<-7. The functions don't change the global value of x, so shouldn't it still be 3?
