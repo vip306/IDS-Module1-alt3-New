@@ -10,6 +10,7 @@
 #### General
 * Formatting, space between object name and "<- "
 * Lowercase variable names
+* Solution should always contain all the code, including sample code (according to Datacamp this prevents errors)
 
 #### Ex 1
 * Does not accept 55,000,000 and 50,000,000 as values even though that is the number of books sold. Either accept or make clear that the unit is millions of books.
