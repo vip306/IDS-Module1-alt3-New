@@ -4,13 +4,13 @@
 
 ### General comments for all chapters:
 * Spacing between comments: If there is a comment and right below the student enters the answer, I'd leave two lines empty so that once the student has filled in the answer there is still one empty line. Makes the final answer nicely formatted.
+* Solution should always contain all the code, including sample code (according to Datacamp this prevents errors)
 
 
 ### Chapter 1: Intro to R
 #### General
 * Formatting, space between object name and "<- "
 * Lowercase variable names
-* Solution should always contain all the code, including sample code (according to Datacamp this prevents errors)
 
 #### Ex 1
 * Does not accept 55,000,000 and 50,000,000 as values even though that is the number of books sold. Either accept or make clear that the unit is millions of books.
