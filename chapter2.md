@@ -2,10 +2,9 @@
 title       : 2. Data Types
 description :
 
-
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:b0bd1a7eb3
 
-1. Take a first look at your data set
+## 1. Take a first look at your data set
 
 In this series of exercises, we examine the murders data set (already loaded in your working environment) to learn about data types in R.
 
@@ -36,7 +35,7 @@ success_msg("Good job! Head over to the next exercise.")
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:8f0ed4ae4f
 
-2. Take another look at your dataset
+## 2. Take another look at your dataset
 
 Now look at the last few rows of the murders data set.
 
@@ -69,7 +68,7 @@ success_msg("Good job! Head over to the next exercise.")
 
 3. Check data type
 
-Next check the data types of all the five variables in murders.
+## Next check the data types of all the five variables in murders.
 
 *** =instructions Use the class() function to find the data types of each variable in murders.
 
@@ -104,7 +103,7 @@ test_error()
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:0126dd4245
 
-4. Factors
+## 4. Factors
 
 In the last exercise you found out that the type of the region variable is "factor". Now let’s take a closer look at this type of data.
 
@@ -134,7 +133,7 @@ test_error()
 ```
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:f4b43c38fc
 
-5. Lists in R
+## 5. Lists in R
 
 Remember data sets are stored as data frames, and are essentially lists in R. Now let’s create a list.
 
