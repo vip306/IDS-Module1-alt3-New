@@ -36,7 +36,7 @@ success_msg("Good job! Head over to the next exercise.")
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:8f0ed4ae4f
 
-2. Take a first look at your data set (continued)
+2. Take another look at your dataset
 
 Now look at the last few rows of the murders data set.
 
