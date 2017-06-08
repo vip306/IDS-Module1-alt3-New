@@ -5,23 +5,26 @@ description : This chapter deals with getting more of an insight into the data w
 --- type:NormalExercise lang:r xp:100 skills:1 key:f2c94437a4
 ## 1. Sort
 
-When looking at a dataset, we may want to sort the data in an order that makes more sense to analyse it.
-The dataset we're using in this chapter is called `RatPupWeight`. The variables we're using are:
+In exploratory data analysis, we often want to sort the data. Let's see how we can do that with a sample dataset. 
 
-weight       : Birth weight of the rat pup
-sex            : Sex of the rat pup (Male, Female)
-Litter          : Litter ID number
-Lsize          : Number of pups per litter
+The dataset we're using in this chapter is called `RatPupWeight`. Since `RatPupWeight` is a built-in dataset in R's `nmle` package, there is no need to load the data. 
+
+The variables we're using are:
+
+weight     : Birth weight of the rat pup
+sex        : Sex of the rat pup (Male, Female)
+Litter     : Litter ID number
+Lsize      : Number of pups per litter
 Treatment  : Level of dosage given to to the litter (High, Low, Control)
 
-If you want to, you can have a look at the entire data by typing `View(RatPupWeight)` in the R console.
+To have a look at the dataset, simply run `RatPupWeight` in the R console.
 
 
 *** =instructions
-Use the `$` operator to access the weight data and store it the object `weight`.
-Then use the sort function to redefine `weight` so that it is sorted.
-Finally use the `[` operator to report the smallest weight size.
-
+- Use the `$` operator to access the weight data and store it the object `weight`.
+- Then use the sort function to redefine `weight` so that it is sorted.
+- Finally use the `[` operator to report the smallest weight size.
+- Use sample code on the `murders` dataset (preloaded in your working environment) as reference.
 
 *** =hint
 
@@ -37,7 +40,6 @@ data(RatPupWeight)
 library(nmle)
 data(RatPupWeight)
 
-
 # Access the variable `state` from the dataset `murders` and store it in an object `state`
 state <- murders$state
 
@@ -49,15 +51,30 @@ state[1]
 
 # Access `weight` from the dataset and store it in `weight`
 
+
 # Sort the object and save it in the same object
 
+
 # Report the smallest weight size
+
 
 
 ```
 
 *** =solution
 ```{r}
+# Load the datasets
+library(nmle)
+data(RatPupWeight)
+
+# Access the variable `state` from the dataset `murders` and store it in an object `state`
+state <- murders$state
+
+# Sort the object and redefine the object
+state <- sort(state)
+
+# Report the smallest state
+state[1]
 
 # Access `weight` from the dataset and store it in `weight`
 weight <- RatPupWeight$weight
@@ -132,12 +149,13 @@ success_msg("Great job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:44a224bc10
-## 3. New Codes
+## 3. Index of max and min values
 
-We can actually perform the same operation as in the previous exercise using the function `which.min`. It basically tells us which is the minimum value.
+A more compact way to perform the same operation in the previous exercise is using the `which.min()` function. 
+Again, use the sample code as a reference.
 
 *** =instructions
-Write one line of code that gives the index of the lowest population entry, using the `which.min` command.
+Use the `which.min` function in one line of code to find the index number of the pup that has the smallest weight.
 
 *** =hint
 Use `which.min` directly.
@@ -146,17 +164,19 @@ Use `which.min` directly.
 ```{r}
 library(nlme)
 data(RatPupWeight)
+library(dslabs)
+data(murders)
+total <- murders$total
 ```
 
 *** =sample_code
 ```{r}
+# Example: Find the population of the state with the smallest number of total murders
+murders$population[which.min(total)]
+
 # Load the datasets
 library(nmle)
 data(RatPupWeight)
-
-
-# Find the smallest value for variable `total`
-which.min(murders$total)
 
 # Find the smallest value for `weight`
 
@@ -179,13 +199,14 @@ success_msg("Great ! You`ve learnt another code in R!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:90b98a2790
-## 4. Learning more about Ordering
+## 4. Sorting in a dataframe
 
 Now we know how much the smallest rat pup weighed and we know which row represents it. However, what treatment (low, high, control) did it receive ?
+There are a few ways to find that out. Check out the sample code on `murders` for one example.
 
 *** =instructions
-Define a variable `treat` to be the `Treatment` groups.
-Report the treatment group of the rat pup with the least weight using the `treat[which.min(RatPupWeight$weight)]` code.
+- Define a variable `treat` to be the `Treatment` groups.
+- Report the treatment group of the rat pup with the least weight using the `treat[which.min(RatPupWeight$weight)]` code.
 
 *** =hint
 
@@ -193,10 +214,15 @@ Report the treatment group of the rat pup with the least weight using the `treat
 ```{r}
 library(nlme)
 data(RatPupWeight)
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
+# Example: Find out the state with the least total number of murders
+murders$state[which.min(murders$total)]
+
 # Load the datasets
 library(nmle)
 data(RatPupWeight)
@@ -210,6 +236,9 @@ data(RatPupWeight)
 
 *** =solution
 ```{r}
+# Example: Find out the state with the least total number of murders
+murders$state[which.min(murders$total)]
+
 # Define variable `treat`
 treat <- RatPupWeight$Treatment
 
@@ -229,18 +258,18 @@ success_msg("Awesome! Now we have the treatment groups of the rat pups as well !
 --- type:NormalExercise lang:r xp:100 skills:1 key:47c076de70
 ## 5. Data Frames and Ranks
 
-You can create a data frame using the data.frame function. Here is a quick example:
+Now let's take a look at how to create a data frame. The function `data.frame` takes both data frames and vectors as arguments.
 
-`temp <- c(35, 88, 42, 84, 81, 30)`
-`city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")`
-`city_temps <- data.frame(name = city, temperature = temp)`
+As long as vectors have the same length, `data.frame` can bind them together to create a new data frame. 
+
+Check out the sample code as a reference.
 
 
 *** =instructions
-Use the `rank(RatPupWeight$weight)` function to determine the weight rank (from smallest to biggest) of each rat pup.
-Save these ranks in an object called `ranks`.
-Then create a data frame with the treatment groups and its rank. Call the data frame `treat_weight`.
-
+- Create a dataframe called `treat_weight_rank` which with three columns:
+    - the `Treatment` and `weight` columns from `RatPupWeight`
+    - and a new variable `rank` which is the ranking of weight of the pups, obtained by the `rank()` function.
+- There are several ways to do this. You can either create the whole dataframe at once, or begin with one or two columns and then add the other(s).
 
 *** =hint
 
@@ -257,20 +286,23 @@ library(nmle)
 data(RatPupWeight)
 
 
-# Store temperatures in an object
+# Example: Store temperatures in an object 
 temp <- c(35, 88, 42, 84, 81, 30)
 
-# Store city names in an object
+# Example: Store city names in an object 
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
-# Create data frame with city names and temperature
+# Example: Create data frame with city names and temperature 
 city_temps <- data.frame(name = city, temperature = temp)
 
 # Define variable `treat`
 
+
 # Define a variable `ranks` to determine the weight size ranks
 
-# Create a dataframe `treat_weight` with the treatment groups and their ranks
+
+# Create a dataframe `treat_weight_rank` with the treatment groups and their ranks
+
 
 ```
 
@@ -283,7 +315,7 @@ treat <- RatPupWeight$Treatment
 ranks <- rank( RatPupWeight$weight)
 
 # Create a dataframe `treat_weight` with the treatment groups and their ranks
-treat_weight <- data.frame(Treatment = treat, ranks = ranks)
+treat_weight_rank <- data.frame(Treatment = treat, ranks = ranks)
 ```
 
 *** =sct
@@ -291,19 +323,23 @@ treat_weight <- data.frame(Treatment = treat, ranks = ranks)
 test_error()
 test_object("treat", undefined_msg = "Define treat first!", incorrect_msg = "Assign treatment group values from dataset to object.")
 test_object("ranks", undefined_msg = "Define ranks first!", incorrect_msg = "Define the rank of the weight values!")
-test_object("treat_weight", undefined_msg = "Define the dataframe first.", incorrect_msg = "Use the command similar to the example.")
+test_object("treat_weight_rank", undefined_msg = "Define the dataframe first.", incorrect_msg = "Use the command similar to the example.")
 success_msg("That`s awesome! You got this!")
 ```
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:22594ff7ec
-## 6. Data Frames, Ranks and Orders
+## 6.  Sort a dataframe
+
+We have practiced sorting a vector by its own order. Now try to sort every column of a data frame by the values of one of the variables (columns).
+
+Use the sample code using the `murders` dataset as a reference. For your exercise, you will continue to work on the `RatPupWeight` dataframe.
 
 *** =instructions
 
-Repeat the previous exercise but this time order `treat_weight` so that the ratpups are ordered from least heavy to most.
-Create an object ind that stores the indexes needed to order the weight values, using the `order` command.  
-Then use the bracket operator [ to re-order each column in the data frame. example: `abb = abb [0]`
+- Repeat the previous exercise but this time order `treat_weight` so that the ratpups are ordered from least heavy to most.
+- Create an object ind that stores the indexes needed to order the weight values, using the `order` command.  
+- Then use the bracket operator `[]` to re-order each column in the data frame.
 
 
 *** =hint
@@ -312,6 +348,8 @@ Then use the bracket operator [ to re-order each column in the data frame. examp
 ```{r}
 library(nlme)
 data(RatPupWeight)
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -323,9 +361,12 @@ data(RatPupWeight)
 
 # Define variable `treat`
 
+
 # Define a variable `ranks` to determine the weight size ranks
 
+
 # Define a variable `ind` to store the indexes needed to order the weight values
+
 
 # Create a dataframe `treat_weight` with the treatment groups and their ranks and ordered from lightest to heaviest
 
@@ -359,55 +400,47 @@ success_msg("Great job! See how well you're building on your knowledge of R!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f7d3786068
-## 7.NA (really, the chapter is called NA)
+## 7. Missing data: NA
 
-The na_example represents a series of counts. You can quickly examine the object using
+Take a look at a preloaded dataset `na_example`. It is a set of numbers from 1 to 1000, but with a certain number of missing values. 
+In R, missing values are represented by `NA`.
 
-`data(na_example)`  
-`str(na_example)`
+You can quickly examine the object using:
+      - `data(na_example)`  
+      - `str(na_example)`
 
-However, when we compute the average we obtain an NA
-
-`mean(na_example)`
+Function `is.na` returns a logical `TRUE` or `FALSE` indicating whether a value is `NA`. Recall that you can use a logical vector in square brackets to access values in a vector that satisfy certain conditions. 
 
 *** =instructions
-The `is.na` returns a logical vector that tells us which entries are NA.
-Assign this logical vector to an object called `ind`, using code `is.na(na_example)` and determine how many NA does na_example have, using the `sum` command?
+
+- Think of a way to find out how many `NAs` there are in `na_example`.
+- Store the number in `count_na`.
 
 *** =hint
-```{r}
+One way is to combine `is.na()` with `sum()`. Another way is to extract all `NAs` in the vector and use `length()`.
 
-```
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/na_example.rda"))
+na_example <- sample(1:100, 1000, replace = TRUE)
+na_indices <- sample.int(1000, 300)
+na_example[na_indices]<-NA
+
 ```
 
 *** =sample_code
 ```{r}
-# Using new dataset
-data(na_example)  
-
-# Checking the structure
-str(na_example)
-
-# Find out the mean of the entire dataset
-mean(na_example)
-
-# Assign `is.na` to logical vector `ind`
-
-# Determine how many NA does `ind` have?
+# Find out how many NAs there are in `na_example` and save the count in `na_count`
 
 
 ```
 
 *** =solution
 ```{r}
-# Assign `is.na` to logical vector `ind`
-ind <- is.na(na_example)
+# Find out how many NAs there are in `na_example` and save the count in `na_count`
+na_count <- sum(is.na(na_example))
 
-# Determine how many NA does `ind` have?
-sum(ind)
+# Or
+na_count <- length(na_example[is.na(na_example)])
 
 ```
 
@@ -415,46 +448,52 @@ sum(ind)
 ```{r}
 test_error()
 test_object("ind", undefined_msg = "Make sure to define ind first.", incorrect_msg = "Check instructions for the code.")
-test_output_contains("sum(ind)", incorrect_msg = "Use the sum command to get the number of NAs.")
 success_msg("Great job! Now let's move to one last thing in this chapter.")
 ```
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7d6eebca10
-## 8. NA !
+## 8. Calculations with NA 
 
-We can leave out the points that are NA and do operations on the rest.
+Run `mean(na_example)` on the right. As you can see, `NAs` mess up some operations in R and we 
+might want to exclude them for those purposes. The `na.rm` argument in many functions helps remove `NAs`.
 
 *** =instructions
-Compute the average again but only for the entries that are not NA making use of the `!` operator before `ind`.
+
+Calculate the mean of all non-missing data in `na_example`, and store the mean in `mean_na_rm`. 
 
 *** =hint
-```{r}
-Remember the ! operator. Use code "mean(na_example[!ind])".
-```
+
+You could also use `!` and indexing to get rid of all `NAs` in the vector. 
+
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/na_example.rda"))
-ind <- is.na(na_example)
+na_example <- sample(1:100, 1000, replace = TRUE)
+na_indices <- sample.int(1000, 300)
+na_example[na_indices]<-NA
 ```
 
 *** =sample_code
 ```{r}
-# Compute the average, for entries that are not NA
+mean(na_example)
 
+# Calculate the mean of all non-missing data in `na_example` and store the mean in `mean_na_rm`
 
 ```
 
 *** =solution
 ```{r}
-# Compute the average, for entries that are not NA
-mean(na_example[!ind])
+# Calculate the mean of all non-missing data in `na_example` and store the mean in `mean_na_rm`
+mean_na_rm <- mean(na_example, na.rm=TRUE)
+
+# Or
+mean_na_rm <- mean(na_example[!is.na(na_example)])
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_output_contains("mean(na_example[!ind])", incorrect_msg = "Check your code from the instructions again.")
-success_msg("Awesome ! Now you're all set with vectors! Get practicing on your own!")
+test_object("mean_na_rm", undefined_msg = "Make sure you store the value in `mean_na_rm`.", incorrect_msg = "Check out the hint.")
+success_msg("Awesome! Now you're all set with this chapter!")
 ```
 ----

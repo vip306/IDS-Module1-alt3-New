@@ -5,16 +5,16 @@ description :
 --- type:NormalExercise lang:r xp:100 skills:1 key:ddf0db0f7d
 
 ## 1. Creating a character vector
-Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data.
-In R, you create a vector with the combine function c(). The character vectors have to be written as strings and so the names are enclosed within double inverted commas.
 
-A character vector would look something like this:
-`food <- c("pizza", "burgers", "salads", "cheese", "pasta")`
+Vectors are one-dimensional arrays that can store different types of data such as numeric data, character data, and logical data. 
+In R, we create a vector with the concatenate function `c()`.  
+
+See how you would create a character vector in the sample code.
 
 *** =instructions
 
-
-Create a character vector containing the names of these yummy desserts, called `desserts`, including  `cheesecake, chocolate_mousse, brownie, apple_pie, pudding`, using the function c.
+- Use the function `c()` to create a character vector containing the names of 5 yummy desserts: "cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding".
+- Name the vector `desserts`. 
 
 *** =hint
 Be sure to place the names within double inverted commas.
@@ -26,16 +26,20 @@ Be sure to place the names within double inverted commas.
 
 *** =sample_code
 ```{r}
-# create a character vector to store the different types of food items and assign it to `food`
+# Example: Create a character vector to store the different types of food items and assign it to `food`
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
-# create a character vector to store the names of 5 desserts and assign it to `desserts`
+# Create a character vector to store the names of 5 desserts and assign it to `desserts`
+
 
 ```
 
 *** =solution
 ```{r}
-# create a character vector to store the names of 5 desserts and assign it to `desserts`
+# Example: Create a character vector to store the different types of food items and assign it to `food`
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+
+# Create a character vector to store the names of 5 desserts and assign it to `desserts`
 desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
 ```
 
@@ -51,13 +55,14 @@ success_msg("Good job! Do you want to now try creating a numeric vector!?")
 
 ## 2. Numeric Vectors  
 
-As in the previous question, we are going to create a vector. Only this time, let's learn to create a numeric vector. The main difference is that you place the vector elements separated by a comma between the parentheses and they don't need inverted commas.
+Now let's learn to create a numeric vector. The main difference is that you don't need quotation marks. 
 
-For example a numeric vector would look something like this:
-`cost <- c(50, 75, 90, 100, 150)`
+See how you would create a numeric vector in the sample code.
 
 *** =instructions
-Create a numeric vector with the calories of the desserts from question 1. It's in the same order presented above: 257, 355, 243, 411, 288. Store the numbers in object `calories`.
+
+- Create a numeric vector with the calories of the desserts from the previous exercise: 257, 355, 243, 411, 288.
+- Name the vector `calories`.
 
 *** =hint
 Make sure your numbers are within parenthesis and have commas separating them.
@@ -69,17 +74,20 @@ Make sure your numbers are within parenthesis and have commas separating them.
 
 *** =sample_code
 ```{r}
-# create a numeric vector to store the cost of different food items and assign it to `cost`
+# Example: Create a numeric vector to store the cost of different food items and assign it to `cost`
 cost <- c(50, 75, 90, 100, 150)
 
-# create a numeric vector to store the calories of the desserts and assign it to `calories`
+# Create a numeric vector to store the calories of the desserts and assign it to `calories`
+
 
 ```
 
 *** =solution
 ```{r}
-# create a numeric vector to store the calories of the desserts and assign it to `calories`
+# Example: Create a numeric vector to store the cost of different food items and assign it to `cost`
+cost <- c(50, 75, 90, 100, 150)
 
+# Create a numeric vector to store the calories of the desserts and assign it to `calories`
 calories <- c(257, 355, 243, 411, 288)
 
 ```
@@ -93,23 +101,17 @@ success_msg("Awesome! Now you`ve learnt to store both numeric and character vect
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c0b17dfdc7
-## 3. Connecting Numeric and Character Vectors
+## 3. Named Vectors
 
-We have successfully assigned the temperatures (numeric values) to `temp` and the city names(character values) to `city`. But can we associate the temperature to it's related city? Yes! We can do so using a code we already know - `names`. We assign names to the numeric values.  
+Note that when we defined the numeric vector in the previous exercise, we made sure the numbers are in the same order as the species names in the first exercise. This way, we can use the character vector to name the numeric vector elements. 
 
-It would look like this:
-`cost <- c(50, 75, 90, 100, 150)`
-`food <- c("pizza", "burgers", "salads", "cheese", "pasta")`
-`names(cost) <- food`
+See how this is done in the sample code.
 
 *** =instructions
-Use the "names" function and the objects defined in the previous exercises to associate the dessert with its corresponding calorie count.
-(You can go back to the previous questions and copy the objects stored.)
+Use the `names()` function and the objects defined in the previous exercises to give the numeric values corresponding dessert names.
 
 *** =hint
-```{r}
-Assign names to the numeric values.
-```
+Assign names to the numeric values. 
 
 *** =pre_exercise_code
 ```{r}
@@ -118,33 +120,48 @@ Assign names to the numeric values.
 
 *** =sample_code
 ```{r}
-# Associate the cost values with its corresponding food item
-cost <- c(50, 75, 90, 100, 150)
-food <- c("pizza", "burgers", "salads", "cheese", "pasta")
-names(cost) <- food
+# Example 1: Name directly and print
+codes <- c("italy" = 380, "canada" = 124, "egypt" = 818)
+codes
 
-# Remember, R just stores the values in the object and doesn't display unless asked. To display, just type the name of the object
-cost
+# Example 2: Or indirectly using `names()` and print 
+codes <- c(380, 124, 818)
+countries <- c("italy", "canada", "egypt")
+names(codes) <- countries
+codes
+
+# Dessert names and calories from the previous question
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+calories <- c(257, 355, 243, 411, 288)
 
 # Associate the dessert with the calories using the `names` function
-desserts <-
-calories <-
+
 
 ```
 
 *** =solution
 ```{r}
-# Associate the dessert with the calories using the `names` function
+# Example 1: Name directly and print
+codes <- c("italy" = 380, "canada" = 124, "egypt" = 818)
+codes
+
+# Example 2: Or indirectly using `names()` and print 
+codes <- c(380, 124, 818)
+countries <- c("italy", "canada", "egypt")
+names(codes) <- countries
+codes
+
+# Dessert names and calories from the previous question
 desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
 calories <- c(257, 355, 243, 411, 288)
+
+# Associate the dessert with the calories using the `names` function
 names(calories) <- desserts
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_object("desserts", incorrect_msg = "Check to match the numbers from the question!")
-test_object("calories", incorrect_msg = "Each of the city names need inverted commas.")
 test_function("names", incorrect_msg = "The numeric vector should be in the parenthesis.")
 success_msg("Great job! We now know the number of calories for these desserts!")
 ```
@@ -153,26 +170,37 @@ success_msg("Great job! We now know the number of calories for these desserts!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:7c4dfa097b
 ## 4. Class
 
-In R, we can determine the class of an object we've created using the `class` command. It can be an integer, or just numeric or a character.
+When we use R to analyze data, it is always a good practice to keep track of the class of an object. 
+
+We can do that using the `class()` command. 
+
+Common classes include: an integer, a numeric value, a character, a logical value, and a factor. 
 
 *** =instructions
-Determine the class of the vector `desserts`.
+Determine the class of `desserts`.
 
 *** =hint
 
 *** =pre_exercise_code
 ```{r}
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+#no pec
 ```
 
 *** =sample_code
 ```{r}
+# Store values for desserts, same as previous question
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+
 # Determine the class of `desserts`
+
 
 ```
 
 *** =solution
 ```{r}
+# Store values for desserts, same as previous question
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+
 # Determine the class of `desserts`
 class(desserts)
 ```
@@ -186,40 +214,53 @@ success_msg("That's great! Let's use some operators on this data now.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:925fcceb04
-## 5. Using Operators
+## 5. Indexing elements of a vector
 
-If we want to display only selected values from the object, R can help us do that easily.
+If we want to display only select values from a vector, R can help us do that easily. 
 
-For example, if we want to see the cost of the last 3 items in our food list, we would type:
-`cost[3:5]`
+We can use square brackets (`[]`) to specify which elements we would like to select, as can be seen in the example on the right.
 
-Note here, that we could also type `cost [c(3,4,5)]` and get the same result. The `:` operator helps us condense the code and get consecutive values.
-
+Note that we could also type `cost [c(3,4,5)]` and get the same result. The `:` operator helps us condense the code and get consecutive values. 
 
 *** =instructions
-
-Use the [ and : operators to access the calories of the first 3 desserts in the list of `desserts`.
+Use the `[]` and `:` operators to access the calories of the first 3 desserts in the list of `desserts`.
 
 *** =hint
 Square brackets and : are the important bits in this.
 
 *** =pre_exercise_code
 ```{r}
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
-calories <- c(257, 355, 243, 411, 288)
-names(calories) <- desserts
+cost <- c(50, 75, 90, 100, 150)
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+names(cost) <- food
 ```
 
 *** =sample_code
 ```{r}
-# cost of the last 3 items in our food list
+# Example: Cost of the last 3 food items
 cost[3:5]
+cost[c(3,4,5)]
+
+# Defining dessert names and calories (code from previous exercises)
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+calories <- c(257, 355, 243, 411, 288)
+names(calories) <- desserts
 
 # Calories of the first 3 desserts
+
+
 ```
 
 *** =solution
 ```{r}
+# Example: Cost of the last 3 items in our food list
+cost[3:5]
+
+# Defining dessert names and calories (code from previous exercises)
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+calories <- c(257, 355, 243, 411, 288)
+names(calories) <- desserts
+
 # Calories of the first 3 desserts
 calories[1:3]
 
@@ -234,28 +275,24 @@ success_msg("Awesome! You`ve learnt how to make your work easier.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7e98f2ad1b
-## 6. Using Operators continued...
+## 6. Indexing vector elements continued...
 
-In the previous question, we accessed the number of survivors for consequtive animals (1st three). But what if we want to access the number of survivors for any 2 specific animals. Well, let's see how we can do that in R!
+In the previous question, we used operator `:` to access consective elements in a vector. Let's now see how we can access
+any elements in a vector.
 
-An example:
-To access the cost of `pizza` (1st) and `pasta` (5th food item) in our list, the code would be:
-`cost [c(1,5)]`
-
+Run the sample code to see how this is done.
 
 *** =instructions
-Use the [ operator to access the calories of the `chocolate_mousse`(2nd) and `brownie`(3rd).
-
+Use the `[]` operator to access the calories of the `chocolate_mousse`(2nd) and `brownie`(3rd).
 
 *** =hint
-
+Use `c()` function to create a numeric vector to index elements of a vector.
 
 *** =pre_exercise_code
 ```{r}
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
-calories <- c(257, 355, 243, 411, 288)
-names(calories) <- desserts
-
+cost <- c(50, 75, 90, 100, 150)
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+names(cost) <- food
 ```
 
 *** =sample_code
@@ -263,12 +300,25 @@ names(calories) <- desserts
 # Access the cost of pizza and pasta from our food list
 cost [c(1,5)]
 
+# Defining dessert names and calories (code from previous exercises)
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+calories <- c(257, 355, 243, 411, 288)
+names(calories) <- desserts
+
 # Access the calories for chocolate mousse and brownie
+
 
 ```
 
 *** =solution
 ```{r}
+# Access the cost of pizza and pasta from our food list
+cost [c(1,5)]
+
+# Defining dessert names and calories (code from previous exercises)
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+calories <- c(257, 355, 243, 411, 288)
+names(calories) <- desserts
 
 # Access the calories for chocolate mousse and brownie
 calories[c(2,3)]
@@ -288,16 +338,23 @@ success_msg("Isn`t that awesome! Let`s move to the next exercise!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:02d64318c8
 ## 7. Sequences
 
-We can also create different types of sequences in R.
-For example, in `seq (7, 49, 7)`, the first argument defines the start, and the second the end.
-The default is to go up in increments of 1, but a third argument let's us tell it how much to jump by.
+`seq()` is another function in R with which we can easily generate numeric vectors with a certain pattern.
+
+We can also create different types of sequences in R. 
+For example,to create a vector with the multiples of 7, smaller than 50, the code would be `seq (7, 49, 7)`, where:
+
+- the first argument defines the start,
+- the second the end, and
+- the third tells us how much to jump by (increments)
+
+Run the sample code to see how we can create a sequence of numbers within a certain range with a specified increment. 
 
 *** =instructions
 Create a vector containing all the positive odd numbers smaller than 1000.
 
 *** =hint
 ```{r}
-If you start at 1 and jump by 2, you`ll get the positive even numbers.
+If you start at 1 and jump by 2, you`ll get the positive odd numbers.
 ```
 *** =pre_exercise_code
 ```{r}
@@ -306,17 +363,28 @@ If you start at 1 and jump by 2, you`ll get the positive even numbers.
 
 *** =sample_code
 ```{r}
-# Create a vector with the multiples of 7, smaller than 50.
-seq(7, 49, 7)
+# Example: Create a vector with all non-negative multiples of 7 smaller than or equal to 50
+seq(from = 0, to = 50, by = 7) 
+
+# Example: Or more concisely
+seq(0, 50, 7) 
 
 # Create a vector containing all the positive odd numbers smaller than 100.
+
 
 ```
 *** =solution
 ```{r}
+# Example: Create a vector with all non-negative multiples of 7 smaller than or equal to 50
+seq(from = 0, to = 50, by = 7) 
+
+# Example: Or more concisely
+seq(0, 50, 7) 
+
 # Create a vector containing all the positive odd numbers smaller than 100.
 seq (1,100,2)
 ```
+
 *** =sct
 ```{r}
 test_error()
@@ -327,15 +395,18 @@ success_msg("Awesome! Let`s `jump` to the next exercise.")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:373b201f36
-## 8. Sequences and length  
+## 8. Length of a Vector  
 
-We're going to now use the `seq` from the previous question and add in the `length` command.
-The `seq` command will generate the sequence and the `length` command will tell you how many numbers the list has.
+Recall that in the last exercise we created sequences of numeric values within a certain range with a specified increment. 
+
+Now consider how to find out how many numeric elements are included in such sequences. 
+
+Use the sample code as reference.
 
 *** =instructions
-Create a vector of numbers that start at 99 and don’t exceed 999, in increments of 9: 99, 18,...999
-How many numbers does the list have?
-Use only one line of code to answer both questions.
+- Create a vector of numbers that start at 99 and don’t exceed 999, in increments of 9: 99, 18,...999
+- How many numbers does the list have?
+- Use only one line of code to answer both questions.
 
 *** =hint
 ```{r}
@@ -362,6 +433,12 @@ length(x)
 
 *** =solution
 ```{r}
+# Creating a sequence of numbers `12,13,14...73` and storing it in object `x`
+x <- 12:73
+
+# Determining the length of object `x`
+length(x)
+
 # Create a sequence of numbers from 9 to 999, in increments of 9 and determine its length
 length(seq(99,999,9)
 ```
@@ -376,10 +453,11 @@ success_msg("Great job! Looks like you`re getting good with sequences!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c056565056
-## 9. Class, Integers and Numerics
+## 9. Class: Integer and Numeric
 
-Note that if you run the class of `class(a<-1)` it shows up as numeric and not integer.
-R defaults to numeric and to force a number to be recognized as an integer, you need to add the letter L.
+To force a number to be recognized as an integer, you need to add the letter L.
+
+Run the sample code to learn about how numeric values defined in different manners have different default class in R.
 
 *** =instructions
 Confirm that the class of 999L is integer.
@@ -396,8 +474,11 @@ Just type class and 999L.
 
 *** =sample_code
 ```{r}
-# Check the class of `1`, assigned to the object `a`
+# Example: Check several classes. Are they integers or not?
 class(a<-1)
+class(c(1,3,5))
+class(c(1,2.4,3/13))
+class(1:5)
 
 # Confirm the class of 999L as an integer
 
@@ -405,6 +486,12 @@ class(a<-1)
 
 *** =solution
 ```{r}
+# Example: Check several classes. Are they integers or not?
+class(a<-1)
+class(c(1,3,5))
+class(c(1,2.4,3/13))
+class(1:5)
+
 # Confirm the class of 999L as an integer
 class(999L)
 
@@ -421,15 +508,19 @@ success_msg("Great, now let's move on to one more fun thing in this module.")
 --- type:NormalExercise lang:r xp:100 skills:1 key:1e7c932a3d
 ## 10. Coercion
 
-The concept of coercion is a very important one. Watching the video, we learnt that when an entry does not match the expected, R tries to guess what we meant before throwing an errors. That might get confusing at times.
+As we mentioned before, it is always good practice to keep track of the class of objects in R. When an element in R does not match the expected class, R usually tries to guess what we mean before throwing an error. That might create confusion or result in undetected mistakes. 
 
-As we've discussed in earlier questions, there are numbers and character vectors. The character vectors are placed within inverted commas, and the numeric aren't.
+Thus, it never hurts to use coercion functions to make sure the objects are of the right class.
 
-We can coerce R into changing characters to integers and vice-versa. The code, `as.integer(x)` and `as.character(x)` help us do this.
-Let's practice doing it!
+The following commands can be used to coerce values into the respective data types:
+
+- `as.integer()`
+- `as.numeric()`
+- `as.logical()`
+- `as.character()`
 
 *** =instructions
-Coerce the `desserts` values into numeric values, using "as.integer".
+Coerce the `desserts` values into numeric values.
 
 *** =hint
 
@@ -446,19 +537,23 @@ desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding
 
 # Coerce it to get a numeric vector for `desserts`
 
+
 ```
 
 *** =solution
 ```{r}
+# Define the `desserts` values
+desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+
 # Coerce it to get a numeric vector for `desserts`
-as.integer(desserts)
+as.numeric(desserts)
 
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_output_contains("as.integer(desserts)", incorrect_msg = "Check the code again.")
+test_output_contains("as.numeric(desserts)", incorrect_msg = "Check the code again.")
 success_msg("Awesome!Doesn`t that feel wonderful. Now, you can try changing it back to characters, using the code as.character(x)`.")
 ```
 ----
