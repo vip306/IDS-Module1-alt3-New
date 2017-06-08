@@ -30,10 +30,10 @@ To have a look at the dataset, simply run `RatPupWeight` in the R console.
 
 *** =pre_exercise_code
 ```{r}
-library(nlme)
-data(RatPupWeight)
 library(dslabs)
 data(murders)
+library(nlme)
+data(RatPupWeight)
 ```
 
 *** =sample_code
@@ -92,7 +92,7 @@ weight[1]
 ```{r}
 test_error()
 test_object("weight", undefined_msg = "Make sure you define the object weight.", incorrect_msg = "Check whether you have redefined it or not.")
-test_output_contains("weight[1]", incorrect_msg = "Print the smallest ")
+test_output_contains("weight[1]", incorrect_msg = "Print the smallest.")
 success_msg("Good job! Now you know how to sort data in an ascending order.")
 ```
 ----
@@ -364,7 +364,6 @@ order_total <- order(murders$total)
 # Example: Use order_total to sort every variable in `murders`
 murders <- murders[order_total,]
 
-
 # Load the datasets
 library(nmle)
 data(RatPupWeight)
@@ -402,7 +401,7 @@ ranks <- rank( RatPupWeight$weight)
 ind <- order(treat)
 
 # Create a dataframe `treat_weight` with the treatment groups and their ranks and ordered from lightest to heaviest
-treat_weight <- data.frame(Treatment = treat[o], ranks = ranks[o])
+treat_weight <- data.frame(Treatment = treat[ind], ranks = ranks[ind])
 ```
 
 *** =sct
@@ -410,7 +409,7 @@ treat_weight <- data.frame(Treatment = treat[o], ranks = ranks[o])
 test_error()
 test_object("treat", undefined_msg = "Define treat first!", incorrect_msg = "Assign treatment group values from dataset to object.")
 test_object("ranks", undefined_msg = "Define ranks first!", incorrect_msg = "Define the rank of the weight values!")
-test_object("ind",undefined_msg = "Define ind first.", incorrect_msg = "Use the order command as well.")
+test_object("ind", undefined_msg = "Define ind first.", incorrect_msg = "Use the order command as well.")
 test_object("treat_weight", undefined_msg = "Define the dataframe first.", incorrect_msg = "Use the command similar to the example.")
 success_msg("Great job! See how well you're building on your knowledge of R!")
 ```
@@ -464,7 +463,7 @@ na_count <- length(na_example[is.na(na_example)])
 *** =sct
 ```{r}
 test_error()
-test_object("ind", undefined_msg = "Make sure to define ind first.", incorrect_msg = "Check instructions for the code.")
+test_object("na_count", undefined_msg = "Make sure to define na_count first.", incorrect_msg = "Check instructions for the code.")
 success_msg("Great job! Now let's move to one last thing in this chapter.")
 ```
 ----

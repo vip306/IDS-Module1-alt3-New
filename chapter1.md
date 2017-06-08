@@ -147,7 +147,7 @@ sqrt(25)
 log10(sqrt(25))
 # same as `log(25, base = 10)`
 
-# Calculate the total number of possible spots, and store in ‘total_spots’
+# Calculate the total number of possible spots, and store in `total_spots`
 
 
 # Calculate the log of double the total_spots, to the base 2
@@ -164,7 +164,7 @@ sqrt(25)
 log10(sqrt(25))
 # same as `log(25, base = 10)`
 
-# Calculate the total number of possible spots, and store in ‘total_spots’
+# Calculate the total number of possible spots, and store in `total_spots`
 total_spots<- 7*4
 
 # Calculate the log of double the total_spots, to the base 2
@@ -175,7 +175,7 @@ log2(total_spots*2)
 ```{r}
 test_error()
 test_object("total_spots", undefined_msg = "Define total_spots first.", incorrect_msg = "Check the calculation.")
-test_function("log", incorrect_msg = "Check the code.")
+test_function("log2", incorrect_msg = "Check the code.")
 success_msg("That was great! You’re doing really well !")
 ```
 ----
