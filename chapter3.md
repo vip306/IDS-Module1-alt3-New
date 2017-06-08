@@ -440,13 +440,13 @@ x <- 12:73
 length(x)
 
 # Create a sequence of numbers from 9 to 999, in increments of 9 and determine its length
-length(seq(99,999,9)
+length(seq(99,999,9))
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_output_contains("length(seq(99,999,9)", incorrect_msg = "Check the code again.")
+test_output_contains("length(seq(99,999,9))", incorrect_msg = "Check the code again.")
 success_msg("Great job! Looks like you`re getting good with sequences!")
 ```
 ----

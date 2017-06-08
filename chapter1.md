@@ -174,8 +174,8 @@ log2(total_spots*2)
 *** =sct
 ```{r}
 test_error()
-test_object("total_spots", undefined_msg = "Define total_spots first.", incorrect_msg = "Check the ")
-test_function("log", incorrect_msg = "")
+test_object("total_spots", undefined_msg = "Define total_spots first.", incorrect_msg = "Check the calculation.")
+test_function("log", incorrect_msg = "Check the code.")
 success_msg("That was great! You’re doing really well !")
 ```
 ----
