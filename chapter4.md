@@ -3,7 +3,8 @@ title       : 4. Sorting
 description : This chapter deals with getting more of an insight into the data we have, by helping us sort through it
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f2c94437a4
-## 1. Sort
+
+## 1. Sort 
 
 In exploratory data analysis, we often want to sort the data. Let's see how we can do that with a sample dataset. 
 
@@ -19,81 +20,71 @@ Treatment  : Level of dosage given to to the litter (High, Low, Control)
 
 To have a look at the dataset, simply run `RatPupWeight` in the R console.
 
-
 *** =instructions
-- Use the `$` operator to access the weight data and store it the object `weight`.
-- Then use the sort function to redefine `weight` so that it is sorted.
-- Finally use the `[` operator to report the smallest weight size.
+- Use the `$` operator to access the weight column and store the values in object `weight`.
+- Then use the `sort()` function to redefine `weight` so that it is sorted.
+- Finally use the `[]` operator to report the smallest weight. 
 - Use sample code on the `murders` dataset (preloaded in your working environment) as reference.
 
 *** =hint
+Print `weight` and see if it is sorted in an ascending or descending order.
 
 *** =pre_exercise_code
 ```{r}
-library(dslabs)
-data(murders)
 library(nlme)
 data(RatPupWeight)
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-# Load the datasets
-library(nmle)
-data(RatPupWeight)
+# Example: Access column total from dataset `murders` and store it in an object total
+total <- murders$total
 
-# Access the variable `state` from the dataset `murders` and store it in an object `state`
-state <- murders$state
+# Example: Sort the object `total`
+total <- sort(total) 
 
-# Sort the object and redefine the object
-state <- sort(state)
+# Example: Report the lowest total number of murders 
+total[1]
 
-# Report the smallest state
-state[1]
-
-# Access `weight` from the dataset and store it in `weight`
+# Access weight from `RatPupWeight` and store it in `weight`
 
 
-# Sort the object and save it in the same object
+# Sort the object `weight`
 
 
-# Report the smallest weight size
-
-
+# Report the smallest weight 
 
 ```
 
 *** =solution
 ```{r}
-# Load the datasets
-library(nmle)
-data(RatPupWeight)
+# Example: Access column total from dataset `murders` and store it in an object total
+total <- murders$total
 
-# Access the variable `state` from the dataset `murders` and store it in an object `state`
-state <- murders$state
+# Example: Sort the object `total`
+total <- sort(total) 
 
-# Sort the object and redefine the object
-state <- sort(state)
+# Example: Report the lowest total number of murders 
+total[1]
 
-# Report the smallest state
-state[1]
-
-# Access `weight` from the dataset and store it in `weight`
+# Access weight from RatPupWeight and store it in weight
 weight <- RatPupWeight$weight
 
-# Sort the object and save it in the same object
+# Sort the object weight 
 weight <- sort(weight)
 
-# Report the smallest weight size
+# Report the smallest weight 
 weight[1]
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_object("weight", undefined_msg = "Make sure you define the object weight.", incorrect_msg = "Check whether you have redefined it or not.")
-test_output_contains("weight[1]", incorrect_msg = "Print the smallest.")
-success_msg("Good job! Now you know how to sort data in an ascending order.")
+test_object("weight", undefined_msg = "Make sure you define the `weight`.", incorrect_msg = "Remember to save the sorted vector in `weight`.")
+test_output_contains("weight[1]", incorrect_msg = "The smallest wieght is sorted to be the first element in the vector.")
+success_msg("Good job! Now you know how to sort data in ascending order.")
 ```
 ----
 
