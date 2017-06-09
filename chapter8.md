@@ -125,8 +125,8 @@ data(RatPupWeight)
 *** =sample_code
 ```{r}
 # Store values as in previous questions
-weight<-
-sex <-
+weight <- RatPupWeight$weight
+sex <- RatPupWeight$sex
 
 # Create a boxplot of weight by sex and specify the dataset
 
@@ -134,6 +134,10 @@ sex <-
 
 *** =solution
 ```{r}
+# Store values as in previous questions
+weight <- RatPupWeight$weight
+sex <- RatPupWeight$sex
+
 # Create a boxplot of weight by sex and specify the dataset
 boxplot(weight~sex, dataset = RatPupWeight)
 
