@@ -5,12 +5,13 @@ description :
 --- type:NormalExercise lang:r xp:100 skills:1 key:4c6d0d3bc3
 ## 1. Scatterplot
 
+In this chapter we practice using basic plotting tools in R. 
+
 We’re using the same dataset as we did in the chapter on `Sorting` - `RatPupWeight`.
 
 *** =instructions
-Store the value of the rats' weights in `weight`, and the number of pups per litter in `lsize`.
-
-Create a scatterplot of the weights of the ratpups with the size of the litter they were born in.  
+- Store the value of the rats' weights in `weight`, and the number of pups per litter in `lsize`.
+- Create a scatterplot of the weights of the ratpups with the size of the litter they were born in.  
 
 *** =hint
 

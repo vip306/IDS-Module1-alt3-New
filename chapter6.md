@@ -56,7 +56,7 @@ success_msg("Great job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a76be07302
-## 2. Which
+## 2. Use logical vector to get indices
 
 The code `which` helps us know directly, which values are low or high etc. Let's use it in this question.
 
@@ -114,7 +114,7 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:43f34535d7
-## 3. [] operators and names
+## 3. Use indexing to access values of a vector
 
 
 *** =instructions
@@ -170,7 +170,7 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a15f758c03
-## 4. Low &
+## 4. Combined logical expressions
 
 
 *** =instructions
@@ -210,6 +210,12 @@ low <- weight_rate < 2
 
 *** =solution
 ```{r}
+# Store the weight rate for each tree, in `weight_rate`
+weight_rate<-women$weight/women$height
+
+# Store the `weight_rate < 2` in `low`
+low <- weight_rate < 2
+
 # Store height=60in, with weight rates lower than 2 in `ind`
 ind <- low & women$height== "60"
 
@@ -260,6 +266,9 @@ weight_rate<-women$weight/women$height
 
 *** =solution
 ```{r}
+# Store the weight rate for each tree, in `weight_rate`
+weight_rate<-women$weight/women$height
+
 # Compute average weight rate and store in `avg` using the function `mean`
 avg <-mean(weight_rate)
 
@@ -272,7 +281,7 @@ sum(weight_rate > avg)
 *** =sct
 ```{r}
 test_error()
-test_object("avg", undefined_msg = "", incorrect_msg = "Compute the mean and store it here.")
+test_object("avg", undefined_msg = "Define avg first.", incorrect_msg = "Compute the mean and store it here.")
 test_function("sum", incorrect_msg = "Check the number of women above average weight rate.")
 success_msg("Awesome!")
 ```
@@ -281,19 +290,21 @@ success_msg("Awesome!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:19320f72ab
 ## 6. Match
 
-We’ll use a different dataset for the next 3 questions - the `murders` dataset that we’ve used before.
+We’ll use the `murders` dataset for the next three exercises.
+
+The `match()` function gives the index numbers of observations that match a supplied vector mentioned above, and then you can use `[]` to acess the names of observations that matched positively.
 
 *** =instructions
-
-Use the `match` function to identify the states with abbreviations NH, OH and TN.
-Start by defining an index of the entries of `murders$abb` that match the three abbreviations, then use the `[` operator to extract the states.
-
+What states are represented by abbreviations "NH", "OH"and "TN"?
 
 *** =hint
+As an example, `match(x, y)` finds the index values of `y` that match with `x`.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dplyr)
+library(dslabs)
+data(murders)
 ```
 
 
@@ -304,7 +315,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 
 # Match the abbs to the murders$abb and store in `ind`
 
-# Print state names from `ind`
+# Extract and print state names with matching state abbreviations
 
 
 ```
@@ -317,7 +328,7 @@ abbs <- c("NH", "OH", "TN")
 # Match the abbs to the murders$abb and store in `ind`
 ind <- match(abbs , murders$abb)
 
-# Print state names from `ind`
+# Extract and print state names with matching state abbreviations
 murders$state[ind]
 ```
 
@@ -334,19 +345,21 @@ success_msg("Awesome!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:beea127137
 ## 7. %in%
 
-If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second we can use the function %in%.
-For example: `deserts%in%courses$food`, would tell us whether or not deserts are in the courses section in dataset food.
+If, rather than a vector of index numbers, we want a logical vector that tells us whether or not each element of a vector is in another vector, we can use the operator `%in%`. Check the sample code to see how it works. 
+
+Note: The true state abbreviations are stored in `murders$abb`.
 
 *** =instructions
-
-Use the %in% operator to create a logical vector that answers the question: which of the following are actual abbreviations: ND, NE, NM, NN, NY ?
+Use the `%in%` operator to create a logical vector that answers which of the following strings are actual state abbreviations in the `murders` dataset: "ND", "NE", "NM", "NN", "NY".
 
 *** =hint
 Use code `abbs%in%murders$abb`.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dplyr)
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -380,20 +393,24 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:65a74691fd
-## 8. Operator `!`
-
+## 8. Negation operator 
 
 *** =instructions
 
-Extend the code you used in exercise seven to report the one entry that is not an actual abbreviation.
-Use the ! operator, which turns FALSE into TRUE and vice-versa, then which to obtain an index.
+In the previous exercise you created a logical vector indicating whether the character strings "ND", "NE", "NM", "NN", "NY" are actual state abbreviations in `murders`. 
+
+Now try to find the character strings that are *not* abbreviations using the negation operator `!`. 
+
+Note: The true state abbreviations are stored in `murders$abb`.
 
 *** =hint
 Use the code `ind <- which(!abbs%in%murders$abb)`.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dplyr)
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
