@@ -203,6 +203,7 @@ low <- weight_rate < 2
 
 # Store height=60in, with weight rates lower than 2 in `ind`
 
+
 # Get weight of that entry
 
 
@@ -226,8 +227,6 @@ women$weight[ind]
 *** =sct
 ```{r}
 test_error()
-test_object("murder_rate", undefined_msg = "Define murder rate", incorrect_msg = "Don't change anything, just run the code.")
-test_object("low", undefined_msg = "Define low!", incorrect_msg = "Same as previous exercise.")
 test_object("ind", undefined_msg = "Make sure to define ind first!", incorrect_msg = "Check code.")
 test_output_contains("women$weight[ind]", incorrect_msg = "Use [] to retrieve names.")
 success_msg("Wasn`t that good! Let`s move to the next one.")

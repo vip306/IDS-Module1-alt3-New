@@ -24,7 +24,7 @@ data(RatPupWeight)
 *** =sample_code
 ```{r}
 # Load the datasets
-library(nmle)
+library(nlme)
 data(RatPupWeight)
 
 # Store the values of `weight` and `lsize`
@@ -63,25 +63,25 @@ success_msg("Doesn't that plot look neat!")
 Create a histogram of the weights of the rat pups.
 
 *** =hint
-```{r}
 
-```
 
 *** =pre_exercise_code
 ```{r}
-library(nmle)
+library(nlme)
 data(RatPupWeight)
 ```
 
 *** =sample_code
 ```{r}
 # Load the datasets
-library(nmle)
+library(nlme)
 data(RatPupWeight)
 
 # Store the value of `weight` (same as previous question)
 
+
 # Create a histogram of the weight
+
 
 ```
 
@@ -118,7 +118,7 @@ Make sure you specify the dataset.
 *** =pre_exercise_code
 ```{r}
 # Load the datasets
-library(nmle)
+library(nlme)
 data(RatPupWeight)
 ```
 
