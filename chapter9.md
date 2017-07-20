@@ -120,9 +120,9 @@ murders<-cbind(murders, new_names)
 
 *** =sct
 ```{r}
-test_object("new_names", undefined_msg = "Make sure you define `new_names`!")
-test_function("ifelse", args = c("test", "yes", "no"), incorrect_msg = "It has to be one line of code. Combine `tolower()` and `ifelse()`.")
-test_object("murders", incorrect_message = "Make sure you use `cbind` to append `new_names` to `murders`!")
+test_object("new_names")
+test_function("ifelse", args = c("test", "yes", "no"))
+test_object("murders")
 test_error()
 success_msg("Whoohoo! You're becoming a pro at this!")
 ```
@@ -397,7 +397,7 @@ print(new_names2)
 ```{r}
 test_for_loop(cond_test = test_student_typed("in 1:nrow(murders)", not_typed_msg = "You can use `(i in 1:nrow(murders))` to define your for loop."),
                 expr_test = test_function("tolower"),
-                not_found_msg = "Make sure to code a for loop in the first place!”)
+                not_found_msg = "Make sure to code a for loop in the first place!")
 test_output_contains("print(new_names2)")
 test_error()
 success_msg("Whoohoo! You are becoming a pro at this!")
