@@ -91,14 +91,14 @@ state_lower[1:5]
 ```
 *** =instructions
 
-Write one line of code using `ifesle` that assigns to the object `new_names` the lower case state name when the state name begins with "M" or a letter that comes after "M" in the alphabet. When the state name begins with a letter before "M", keep the state name.
+Write one line of code using `ifelse` that assigns to the object `new_names` the lower case state name when the state name begins with "M" or a letter that comes after "M" in the alphabet. When the state name begins with a letter before "M", keep the state name.
 
 *** =hint
 R uses arithmetic operators (>, <, ==, etc.) to compare the order of characters in the alphabet. Play with it in the R console!
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
 ```
 
 *** =sample_code
@@ -121,8 +121,8 @@ murders<-cbind(murders, new_names)
 *** =sct
 ```{r}
 test_object("new_names", undefined_msg = "Make sure you define `new_names`!")
-test_function("ifelse", args = c("test", "yes", “no"), incorrect_msg = "It has to be one line of code. Combine `tolower()` and `ifelse()`.”)
-test_object(“murders”, incorrect_message = “Make sure you use `cbind` to append `new_names` to `murders`!”)
+test_function("ifelse", args = c("test", "yes", "no"), incorrect_msg = "It has to be one line of code. Combine `tolower()` and `ifelse()`.")
+test_object("murders", incorrect_message = "Make sure you use `cbind` to append `new_names` to `murders`!")
 test_error()
 success_msg("Whoohoo! You're becoming a pro at this!")
 ```
@@ -395,12 +395,12 @@ print(new_names2)
 
 *** =sct
 ```{r}
-test_for_loop(cond_test = test_student_typed("in 1:nrow(murders)”, not_typed_msg = "You can use `(i in 1:nrow(murders))` to define your for loop."),
+test_for_loop(cond_test = test_student_typed("in 1:nrow(murders)", not_typed_msg = "You can use `(i in 1:nrow(murders))` to define your for loop."),
                 expr_test = test_function("tolower"),
                 not_found_msg = "Make sure to code a for loop in the first place!”)
 test_output_contains("print(new_names2)")
 test_error()
-success_msg("Whoohoo! You're becoming a pro at this!")
+success_msg("Whoohoo! You are becoming a pro at this!")
 ```
 
 
@@ -512,7 +512,7 @@ test_error()
 test_function_definition("dangerous",
                         function_test = {
                         test_expression_result("dangerous(murders, 3)")
-                        test_expression_result(“dangerous(murders, 5)")
+                        test_expression_result("dangerous(murders, 5)")
                         },
                         body_test = {
                         test_function("plot")
