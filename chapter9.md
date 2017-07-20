@@ -67,10 +67,10 @@ Which of the following expressions is always `TRUE` when at least one entry of a
 
 *** =sct
 ```{r}
-msg1 = "Check the question again. Try an example on the R console."
-msg2 = "Re-read the question! Try an example on the R console."
-msg3 = "Good job! Let's move to the next question.”
-msg4 = "Try again!Try an example on the R console."
+msg1 = "Check the question again. Try an example in the R console."
+msg2 = "Re-read the question! Try an example in the R console."
+msg3 = "Good job! Let us move to the next question."
+msg4 = "Try again! Try an example on the R console."
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 

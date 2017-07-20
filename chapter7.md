@@ -115,7 +115,7 @@ data(murders)
 
 # Use mutate to add a rate column,
 # then add `rank` (highest to lowest) and store in `murders`
-murders <- mutate(murders, rate =  total / population * 100000, rank = )
+murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 ```
 
 *** =sct
@@ -124,7 +124,6 @@ test_error()
 test_object("murders", incorrect_msg = "Remember, rank from highest to lowest.")
 success_msg("Good job!")
 ```
-----
 
 
 
