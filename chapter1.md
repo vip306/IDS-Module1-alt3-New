@@ -18,7 +18,7 @@ Consider this problem: Harry Potter and the Goblet of Fire(part 4) sold $55 mill
 
 *** =instructions
 - Assign the number of books sold (in millions) to hp4 and hp7 variables. 
-- Add the variables. 
+- Add the variables to calculate the total number of books sold. 
 
 *** =hint
 
@@ -67,12 +67,12 @@ test_error()
 test_object("hp4", undefined_msg = "Define hp4 first.", incorrect_msg = "Check the numbers.")
 test_object("hp7", undefined_msg = "Define hp7 first.", incorrect_msg = "Check the numbers.")
 test_output_contains("hp4 + hp7", incorrect_msg = "You need to add the 2 variables.")
-success_msg("Great job! Isn’t it crazy, how many copies of HP books were sold !")
+success_msg("Great job! You can perform all mathematical calculations this way!")
 ```
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:1e3753c95a
-## 2. Less than, Greater than, Equal to
+## 2. Comparison operations: Less than, Greater than, Equal to
 
 We can use the lesser than and greater than operators, to determine if the values are lesser, greater or equal to one another. 
 When we print a value in R, it tells us if our operation is true or false. 
