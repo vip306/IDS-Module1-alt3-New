@@ -5,7 +5,7 @@ description :
 --- type:NormalExercise lang:r xp:100 skills:1 key:bf96ea1498
 ## 1.  Assigning values and simple calculations 
 
-In this exercise, we’re performing calculations by storing numbers as variables. 
+In this exercise, you will perform calculations by storing numbers as variables. 
 
 It's good practice to define variables instead of typing the values everytime you need them. This way, once you change
 the value of a variable, it's updated everywhere in your code.
