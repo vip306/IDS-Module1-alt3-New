@@ -5,17 +5,20 @@ description :
 --- type:NormalExercise lang:r xp:100 skills:1 key:bf96ea1498
 ## 1.  Assigning values and simple calculations 
 
-In this exercise, you will perform calculations by storing numbers as variables. 
+In this exercise, you will store numbers in variables and perform calculations on them.  
 
-It's good practice to define variables instead of typing the values everytime you need them. This way, once you change
-the value of a variable, it's updated everywhere in your code.
+It is good practice to define variables instead of typing the values everytime you need them. This way, once you change
+the value of a variable, it is automatically updated everywhere in your code.
 
-Remember, R doesn’t show any results when you store a value. If you make an error, an error message will pop up on the screen after you submit the answer.
+Remember, R does not show any results when you store a value. If you make an error, an error message will pop up on the screen after you submit the answer.
 
 Note how `#` is used to make comments. Comments won't run as code.
 
+Consider this problem: Harry Potter and the Goblet of Fire(part 4) sold $55 million$ copies and Harry Potter and the Deathly Hallows(part 7) sold $50 million$ copies. What is the combined sale of the two books? 
+
 *** =instructions
-Calculate the combined sale of the 2 books, if Harry Potter and the Goblet of Fire(part 4) sold $55 million$ copies and Harry Potter and the Deathly Hallows(part 7) sold $50 million$ copies.
+- Assign the number of books sold (in millions) to hp4 and hp7 variables. 
+- Add the variables. 
 
 *** =hint
 
