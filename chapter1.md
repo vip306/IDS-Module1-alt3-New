@@ -67,7 +67,7 @@ test_error()
 test_object("hp4", undefined_msg = "Define hp4 first.", incorrect_msg = "Check the numbers.")
 test_object("hp7", undefined_msg = "Define hp7 first.", incorrect_msg = "Check the numbers.")
 test_output_contains("hp4 + hp7", incorrect_msg = "You need to add the 2 variables.")
-success_msg("Great job! You can perform all mathematical calculations this way!")
+success_msg("Great job! You can perform all mathematical calculations similarly!")
 ```
 ----
 
