@@ -117,7 +117,7 @@ data(murders)
 # Use class() to find out data types of each variable in murders
 class(murders$region)
 class(murders$state)
-class(murders$populaiton)
+class(murders$population)
 class(murders$abb)
 class(murders$total)
 ```
