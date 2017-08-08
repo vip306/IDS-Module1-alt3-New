@@ -131,6 +131,11 @@ success_msg("Yes! It was a draw!")
 ## 3. Arithmetic Operations: Logarithms
 
 You can generally use R as a calculator, including calculating logs of numbers. 
+
+- `log(x)` calculates the natural logarithm of variable `x`. 
+- `log2(x)` or `log(x, base = 2)` calculates log to the base 2 of `x`. 
+- `log10(x)` or `log(x, base = 10)` calculates log to the base 10 of `x`.
+
 Look at an example in the console on the right window.
 
 *** =instructions
