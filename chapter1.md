@@ -190,17 +190,21 @@ success_msg("That was great! So, in 7 hours, the bacteria would have replicated 
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:da368a277f
-## 4. Calculations
+## 4. Advanced Arithmetic Operations 
 
-Let’s use R to calculate the area of Hagrid’s house and grounds.
+Now, calculate the area of Hagrid’s house and grounds.
 
-`Area of rectangle = length * width`
-`Area of a semi-circle: ½*pi*r^2 (pi = 3.14)`
+- `Area of rectangle = length * width`
+- `Area of a semi-circle: ½*pi*r^2 (pi = 3.14)`
+
+`length` = $40 feet$, `width` = $30 feet$, and the `radius` of the semi-circular ground = $15 feet$.
 
 *** =instructions
 
-Calculate the total area of Hagrid’s house and grounds, if the `length` of his house = $40 feet$, `width` = $30 feet$.
-And the `radius` of the semi-circular ground is $15 feet$.
+- Calculate the area of the house and store it in `area_h`
+- Calculate the area of the ground and store it in `area_g`
+- Calculate the total area and store it in `total_area`
+- Print the total area
 
 *** =hint
 Use the formula for area of rectangle + area of semi-circle.
@@ -215,10 +219,13 @@ Use the formula for area of rectangle + area of semi-circle.
 # Calculate the area of the house and store it in `area_h`
 
 
-# Calculate the area of the grounds and store it in `area_g`
+# Calculate the area of the ground and store it in `area_g`
 
 
-# Calculate the total area combining the house and grounds and store it in `total_area`
+# Calculate the total area combining the house and ground and store it in `total_area`
+
+
+# Print the total area 
 
 
 ```
@@ -233,6 +240,9 @@ area_g <- 1/2*pi*15^2
 
 # Calculate the total area combining the house and grounds and store it in `total_area`
 total_area <- area_h + area_g
+
+# Print the total area 
+total_area
 
 ```
 
