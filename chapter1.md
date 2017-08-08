@@ -163,7 +163,7 @@ sqrt(25)
 log10(sqrt(25))
 # same as `log(25, base = 10)`
 
-# Calculate the log of 128 to the appropriate base. 
+# Calculate the log of 128 to the appropriate base to find the time. 
 
 
 ```
@@ -177,7 +177,7 @@ sqrt(25)
 log10(sqrt(25))
 # same as `log(25, base = 10)`
 
-# Calculate the log of 128 to the appropriate base. 
+# Calculate the log of 128 to the appropriate base to find the time. 
 log2(128) 
 ```
 
@@ -185,7 +185,7 @@ log2(128)
 ```{r}
 test_error()
 test_function("log2", incorrect_msg = "Check the code.")
-success_msg("That was great! You’re doing really well !")
+success_msg("That was great! So, in 7 hours, the bacteria would have replicated to become 128 in number!")
 ```
 ----
 
