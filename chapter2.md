@@ -96,6 +96,7 @@ For this exercise, you will find out the data types of all the variables in the 
 
 *** =instructions 
 - Use `names()` function to find out the variables in `murders`
+- Run this command by pressing `ctrl`+`enter` keys on your keyboard
 - Use the `class()` function to find the data types of each variable in murders
 
 *** =hint 
