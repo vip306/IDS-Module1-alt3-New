@@ -128,9 +128,9 @@ success_msg("Yes! It was a draw!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:6d8c3c5f06
-## 3. Logs
+## 3. Arithmetic Operations: Logarithms
 
-R in its use as a calculator, helps us calculate logs. 
+You can generally use R as a calculator, including calculating logs of numbers. 
 Look at an example in the console on the right window.
 
 *** =instructions
