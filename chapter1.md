@@ -17,8 +17,8 @@ Note how `#` is used to make comments. Comments won't run as code.
 Consider this problem: Harry Potter and the Goblet of Fire(part 4) sold $55 million$ copies and Harry Potter and the Deathly Hallows(part 7) sold $50 million$ copies. What is the combined sale of the two books? 
 
 *** =instructions
-- Assign the number of books sold (in millions) to hp4 and hp7 variables. 
-- Add the variables to calculate the total number of books sold. 
+- Assign the number of books sold (in millions) to hp4 and hp7 variables 
+- Add the variables to calculate the total number of books sold
 
 *** =hint
 
@@ -79,10 +79,12 @@ You can use the lesser than (<) , greater than (>) and equal to (=) operators, t
 For example, typing `5>5`, would yield the result `FALSE` and typing `6>5`, would yield `TRUE`.
 Remember, in R, to say that `5 is equal to 5`, we need to type `5==5`. The double equal to sign indicates that 5 is equal to 5.
 
-Consider this problem: 
+Consider this problem: At the beginning of the Quidditch match, Gryffindor scored 15 points and Hufflepuff, their opponent, scored 165 points. At the last moment, Harry from Gryffindor caught the Snitch for 150 points. Determine if the teams scored equal number of points. 
 
 *** =instructions
-Determine the outcome of the Quidditch match if at the beginning, Gryffindor scored 15 points and Hufflepuff, their opponent, scored 165 points. At the last moment, Harry from Gryffindor caught the Snitch for 150 points.
+- Assign total scores to `gryffindor` and `hufflepuff` variables
+- Use the appropriate operator to compare them
+
 
 *** =hint
 Which number is lesser than, greater than or equal to the other?
