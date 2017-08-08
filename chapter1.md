@@ -137,14 +137,15 @@ You can generally use R as a calculator, including calculating logs of numbers.
 - `log10(x)` or `log(x, base = 10)` calculates log to the base 10 of `x`.
 
 Look at an example in the console on the right window.
+Consider the problem: A certain species of bacteria doubles itself after 1 hour. At t=0, there are 2 bacteria. After how many hours, will there be 128 bacteria? 
 
 *** =instructions
-- Lord Voldemort has 7 horcruxes and each of them could be hidden in 4 different spots.
-- Find the log, to the base 2, of the number if you double the total number of possible spots.
+- Apply log to the appropriate base for the number 
 
 
 *** =hint
-`total_spots <- 7*4`
+If x^y=z, then, y = log(z, base = x)
+Here, x = 2 and z = 128. 
 
 *** =pre_exercise_code
 ```{r}
@@ -160,10 +161,7 @@ sqrt(25)
 log10(sqrt(25))
 # same as `log(25, base = 10)`
 
-# Calculate the total number of possible spots, and store in `total_spots`
-
-
-# Calculate the log of double the total_spots, to the base 2
+# Calculate the log of 128 to the appropriate base. 
 
 
 ```
@@ -177,17 +175,13 @@ sqrt(25)
 log10(sqrt(25))
 # same as `log(25, base = 10)`
 
-# Calculate the total number of possible spots, and store in `total_spots`
-total_spots<- 7*4
-
-# Calculate the log of double the total_spots, to the base 2
-log2(total_spots*2)
+# Calculate the log of 128 to the appropriate base. 
+log2(128) 
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_object("total_spots", undefined_msg = "Define total_spots first.", incorrect_msg = "Check the calculation.")
 test_function("log2", incorrect_msg = "Check the code.")
 success_msg("That was great! You’re doing really well !")
 ```
