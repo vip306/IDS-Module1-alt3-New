@@ -3,12 +3,12 @@ title       : 1. R Basics
 description :
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:bf96ea1498
-## 1.  Assigning values and simple calculations 
+## 1. Variables and Simple Arithmetic Operations 
 
 In this exercise, you will store numbers in variables and perform calculations on them.  
 
 It is good practice to define variables instead of typing the values everytime you need them. This way, once you change
-the value of a variable, it is automatically updated everywhere in your code.
+the value of a variable, it will be automatically updated everywhere in your code.
 
 Remember, R does not show any results when you store a value. If you make an error, an error message will pop up on the screen after you submit the answer.
 
@@ -74,11 +74,12 @@ success_msg("Great job! You can perform all mathematical calculations similarly!
 --- type:NormalExercise lang:r xp:100 skills:1 key:1e3753c95a
 ## 2. Comparison operations: Less than, Greater than, Equal to
 
-We can use the lesser than and greater than operators, to determine if the values are lesser, greater or equal to one another. 
-When we print a value in R, it tells us if our operation is true or false. 
+You can use the lesser than (<) , greater than (>) and equal to (=) operators, to determine if the values are lesser, greater or equal to one another. When you use these operators, R compares the variables and returns `TRUE` or `FALSE` depending on the values stored in the variables. 
 
 For example, typing `5>5`, would yield the result `FALSE` and typing `6>5`, would yield `TRUE`.
 Remember, in R, to say that `5 is equal to 5`, we need to type `5==5`. The double equal to sign indicates that 5 is equal to 5.
+
+Consider this problem: 
 
 *** =instructions
 Determine the outcome of the Quidditch match if at the beginning, Gryffindor scored 15 points and Hufflepuff, their opponent, scored 165 points. At the last moment, Harry from Gryffindor caught the Snitch for 150 points.
