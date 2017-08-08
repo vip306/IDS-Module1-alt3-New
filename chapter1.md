@@ -87,6 +87,8 @@ Consider this problem: At the beginning of the Quidditch match, Gryffindor score
 
 
 *** =hint
+What comparison does the problem want you to perform? (> or < or = ?)
+
 Which number is lesser than, greater than or equal to the other?
 
 
