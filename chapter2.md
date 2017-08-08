@@ -136,7 +136,7 @@ class(murders$total)
 
 *** =sct
 ```{r}
-test_output_contains("names(murders)"), incorrect_msg = "Check for typos")
+test_output_contains("names(murders)", incorrect_msg = "Check for typos")
 test_output_contains(c("class(murders$region)", "class(murders$state)", "class(murders$population)","class(murders$abb)", "class(murders$total)"), incorrect_msg = "Make sure you check all five variables!")
 success_msg("That was great! Now you know the data types of all variables in your data set!")  
 test_error()
