@@ -141,7 +141,7 @@ Look at an example in the console on the right window.
 Consider the problem: A certain species of bacteria doubles itself after 1 hour. At t=0, there are 2 bacteria. After how many hours, will there be 128 bacteria? 
 
 *** =instructions
-- Apply log to the appropriate base for the final number of bacteria. 
+- Apply log to the appropriate base for the final number of bacteria 
 
 
 *** =hint
