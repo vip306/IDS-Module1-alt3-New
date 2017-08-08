@@ -4,12 +4,12 @@ description :
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:b0bd1a7eb3
 
-## 1. Take a first look at your data set
+## 1. Take a first look at your dataset
 
-In this series of exercises, we examine the `murders` data set. First of all, load the package `dslabs` and load the dataset `murders` using the `data()` function. Then use the `str()` function to get an idea of what variables are included.
+In this series of exercises, you will examine the `murders` dataset. First of all, load the package `dslabs` and load the dataset `murders` using the `data()` function. Then use the `str()` function to get an idea of what variables are included.
 
 *** =instructions 
-Use the `str()` function to check the structure of the `murders` data set.
+Use the `str()` function to check the structure of the `murders` dataset.
 
 *** =hint 
 `murders` is now an R object and therefore does not need the quotations marks to be referred to.
@@ -44,15 +44,17 @@ success_msg("Good job! Head over to the next exercise.")
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:8f0ed4ae4f
 
-## 2. Take another look at your dataset
+## 2. Inspecting your dataset
 
-Now look at the last few rows of the murders data set.
+Now, look at the last few rows of the `murders` dataset. The `tail()` function outputs the last 6 rows of a given dataset. 
+You can change the number of rows by adding the number as a second argument in the `tail()` function. 
+For example, `tail(murders, 10)` outputs last 10 rows of the dataset. 
 
 *** =instructions
-Use the tail() function to check the last six rows of murders.
+Use the `tail()` function to check the last six rows of murders.
 
 *** =hint
-You can change how many rows you want to see by adding a second argument to the tail() function, e.g. tail(murders, 10).
+
 
 *** =pre_exercise_code
 ```{r}
@@ -82,9 +84,10 @@ success_msg("Good job! Head over to the next exercise.")
 ----
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:d6e46d357d
 
-3. Check data type
+## 3. Inspecting data type
 
-## Next check the data types of all the five variables in murders.
+Next check the data types of all the five variables in murders. 
+The `class()` function outputs the data type of the variable. 
 
 *** =instructions 
 Use the class() function to find the data types of each variable in murders.
