@@ -90,7 +90,7 @@ Next check the data types of all the five variables in murders.
 The `class()` function outputs the data type of the variable. 
 
 *** =instructions 
-Use the class() function to find the data types of each variable in murders.
+Use the `class()` function to find the data types of each variable in murders.
 
 *** =hint 
 You can use names() to obtain the names of all variables in murders.
