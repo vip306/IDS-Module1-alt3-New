@@ -257,14 +257,17 @@ success_msg("Awesome job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4d6f2e8e26
-## 5. Calculating Distance, Speed and Time
+## 5. Calculating Speed from Distance and Time
 
+Consider the problem: Calculate the average speed (miles/hour) of the Hogwarts Express train from London to Hogwarts, if it  travels $200 miles$ and takes $4 hours$.
 
 *** =instructions
-Calculate the average speed (miles/hour) of the Hogwarts Express train from London to Hogwarts, if it  travels $200 miles$ and takes $4 hours$.
+- Store the distance and time values in the respective variables 
+- Calculate the average speed and store it in a variable 
+- Print the average speed
 
 *** =hint
-Formula for speed = distance/ time
+Formula for speed = distance / time
 
 *** =pre_exercise_code
 ```{r}
@@ -278,6 +281,7 @@ Formula for speed = distance/ time
 
 
 # Calculate the average speed and store it in `avg_speed`
+
 
 
 # Remember that R doesn’t automatically print any output; so print the average speed
