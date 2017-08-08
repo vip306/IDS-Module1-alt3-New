@@ -86,14 +86,20 @@ success_msg("Good job! Head over to the next exercise.")
 
 ## 3. Inspecting data type
 
-Next check the data types of all the five variables in murders. 
-The `class()` function outputs the data type of the variable. 
+You can see all the variables in a dataset using the `names()` command. For example, `names(murders)` lists the variables (or the column names) in the murders dataset. 
+
+To refer to a specific variable within the dataset, you use the `$` operator. For example, `murders$state` refers to the `state` variable within the `murders` dataset. 
+
+The `class()` command lets you know the data type of a variable. For example, `class(murders$state)` lists the data type of the `state` variable within the `murders` dataset. 
+
+For this exercise, you will find out the data types of all the variables in the `murders` dataset. 
 
 *** =instructions 
-Use the `class()` function to find the data types of each variable in murders.
+- Use `names()` function to find out the variables in `murders`
+- Use the `class()` function to find the data types of each variable in murders
 
 *** =hint 
-You can use names() to obtain the names of all variables in murders.
+Remember to use `$` operator to refer to individual variables in the dataset
 
 *** =pre_exercise_code
 ```{r}
@@ -104,9 +110,12 @@ data(murders)
 
 *** =sample_code
 ```{r}
+
+# Use names() to find out variables in murders. Select the command, and press 'shift' + 'enter' on your keyboard. 
+
+
+
 # Use class() to find out data types of each variable in murders
-
-
 
 
 
@@ -114,7 +123,10 @@ data(murders)
 
 *** =solution
 ```{r}
-# Use class() to find out data types of each variable in murders
+# # Use names() to find out variables in murders. Select the command, and press 'ctrl' + 'enter' on your keyboard. 
+names(murders)
+
+#Use class() to find out data types of each variable in murders
 class(murders$region)
 class(murders$state)
 class(murders$population)
@@ -124,6 +136,7 @@ class(murders$total)
 
 *** =sct
 ```{r}
+test_output_contains("names(murders)"), incorrect_msg = "Check for typos")
 test_output_contains(c("class(murders$region)", "class(murders$state)", "class(murders$population)","class(murders$abb)", "class(murders$total)"), incorrect_msg = "Make sure you check all five variables!")
 success_msg("That was great! Now you know the data types of all variables in your data set!")  
 test_error()
