@@ -137,6 +137,7 @@ You can generally use R as a calculator, including calculating logs of numbers.
 - `log10(x)` or `log(x, base = 10)` calculates log to the base 10 of `x`.
 
 Look at an example in the console on the right window.
+
 Consider the problem: A certain species of bacteria doubles itself after 1 hour. At t=0, there are 2 bacteria. After how many hours, will there be 128 bacteria? 
 
 *** =instructions
@@ -144,7 +145,8 @@ Consider the problem: A certain species of bacteria doubles itself after 1 hour.
 
 
 *** =hint
-If x^y=z, then, y = log(z, base = x)
+If x^y=z, then, y = log(z, base = x).
+
 Here, x = 2 and z = 128. 
 
 *** =pre_exercise_code
