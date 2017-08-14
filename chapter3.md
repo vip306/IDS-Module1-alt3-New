@@ -368,7 +368,6 @@ Run the sample code to see how you can create a sequence of numbers within a cer
 
 *** =instructions
 - Create a vector containing all the positive odd numbers smaller than 100
-- 
 
 *** =hint
 ```{r}
@@ -407,7 +406,7 @@ seq (1,100,2)
 ```{r}
 test_error()
 test_output_contains("seq (1,100,2)", incorrect_msg = "Make sure the third argument has the value the sequence needs to jump by.")
-success_msg("Awesome! Let`s `jump` to the next exercise.")
+success_msg("Awesome! Let's 'jump' to the next exercise.")
 ```
 ----
 
@@ -415,16 +414,20 @@ success_msg("Awesome! Let`s `jump` to the next exercise.")
 --- type:NormalExercise lang:r xp:100 skills:1 key:373b201f36
 ## 8. Length of a Vector  
 
-Recall that in the last exercise we created sequences of numeric values within a certain range with a specified increment. 
+Recall that in the last exercise, you created sequences of numeric values within a certain range with a specified increment. 
 
 Now consider how to find out how many numeric elements are included in such sequences. 
+
+You can do that by using the `length(<vector name>)` function. It prints the length or the number of elements in a given vector.  
+You could also create a vector using the `seq()` function within the `length()` function. 
+For example, `length(seq(2,100,2))` generates the sequence of even numbers as well as outputs the length of that sequence as `50`.  
 
 Use the sample code as reference.
 
 *** =instructions
-- Create a vector of numbers that start at 99 and don’t exceed 999, in increments of 9: 99, 18,...999
-- How many numbers does the list have?
-- Use only one line of code to answer both questions.
+- Using one line of code, do the following: 
+- Create a vector of numbers that start at 99 and don’t exceed 999, in increments of 9: 99, 108,...999
+- Find the length of this vector 
 
 *** =hint
 ```{r}
