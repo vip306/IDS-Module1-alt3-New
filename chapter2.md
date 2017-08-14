@@ -196,6 +196,7 @@ test_error()
 Remember datasets are stored as data frames, and are essentially lists in R. Now, let’s create a list.
 
 You use `list()` function to create lists. 
+
 For example, `x <- list(100, add, c(2.5, 8, 12))` creates a list of a numeric value, a function and a vector. 
 
 *** =instructions 
