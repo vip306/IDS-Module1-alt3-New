@@ -548,13 +548,13 @@ Coerce the `desserts` values into numeric values.
 
 *** =pre_exercise_code
 ```{r}
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 ```
 
 *** =sample_code
 ```{r}
 # Define the `desserts` values
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 
 # Coerce it to get a numeric vector for `desserts`
 
@@ -564,7 +564,7 @@ desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding
 *** =solution
 ```{r}
 # Define the `desserts` values
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 
 # Coerce it to get a numeric vector for `desserts`
 as.numeric(desserts)
