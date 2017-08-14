@@ -150,7 +150,7 @@ test_error()
 
 ## 4. Factors
 
-In the last exercise, you found out that the data type of the region variable is `factor`. This data type indicates categories. Now let’s take a closer look at this type of data.
+In the last exercise, you found out that the data type of the region variable is `factor`. This data type indicates categories. Now, take a closer look at this type of data.
 
 `nlevels(<variable>)` returns the number of levels or categories in that variable. 
 
@@ -193,7 +193,7 @@ test_error()
 
 ## 5. Lists
 
-Remember datasets are stored as data frames, and are essentially lists in R. Now, let’s create a list.
+Remember datasets are stored as data frames, and are essentially lists in R. Now, you will create a list.
 
 You use `list()` function to create lists. 
 

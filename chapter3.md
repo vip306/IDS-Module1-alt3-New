@@ -4,7 +4,7 @@ description :
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ddf0db0f7d
 
-## 1. Creating a character vector
+## 1. Character vector
 
 Vectors are one-dimensional arrays that can store different types of data such as numeric data, character data, and logical data. 
 In R, we create a vector with the concatenate function `c()`.  
@@ -13,8 +13,8 @@ See how you would create a character vector in the sample code.
 
 *** =instructions
 
-- Use the function `c()` to create a character vector containing the names of 5 yummy desserts: "cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding".
-- Name the vector `desserts`. 
+- Create a character vector `desserts` using the function `c()` with names of 5 desserts: "cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding"
+- print `desserts` and observe the output
 
 *** =hint
 Be sure to place the names within double inverted commas.
@@ -32,6 +32,9 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 # Create a character vector to store the names of 5 desserts and assign it to `desserts`
 
 
+# Print the vector `desserts`
+
+
 ```
 
 *** =solution
@@ -40,22 +43,27 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
 # Create a character vector to store the names of 5 desserts and assign it to `desserts`
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
+
+# Print the vector `desserts`
+desserts
+
 ```
 
 *** =sct
 ```{r}
 test_error()
 test_object("desserts", incorrect_msg = "Each of the dessert names need inverted commas.")
+test_object("desserts", incorrect_msg = "Check the spelling of the variable")
 success_msg("Good job! Do you want to now try creating a numeric vector!?")
 ```
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:5e66879c2c
 
-## 2. Numeric Vectors  
+## 2. Numeric Vector  
 
-Now let's learn to create a numeric vector. The main difference is that you don't need quotation marks. 
+Now, let's learn to create a numeric vector. The main difference is that you don't need quotation marks. 
 
 See how you would create a numeric vector in the sample code.
 
