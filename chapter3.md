@@ -111,9 +111,13 @@ success_msg("Awesome! Now you've learnt to create both numeric and character vec
 --- type:NormalExercise lang:r xp:100 skills:1 key:c0b17dfdc7
 ## 3. Named Vectors
 
-Note that when we defined the numeric vector in the previous exercise, we made sure the numbers are in the same order as the species names in the first exercise. This way, we can use the character vector to name the numeric vector elements. 
+When you defined the numeric vector in the previous exercise, you listed the numbers in the same order as the desserts' names in the first exercise. Now, you will learn to use the character vector to name the numeric vector elements. 
 
-See how this is done in the sample code.
+You use the `names()` function to do this. 
+
+`names(num_vct) <- char_vct` will name the numbers in the numeric vector `num_vct` with the elements in the character vector `char_vct`.  
+
+You can see an example of how this is done in the sample code.
 
 *** =instructions
 Use the `names()` function and the objects defined in the previous exercises to give the numeric values corresponding dessert names.
