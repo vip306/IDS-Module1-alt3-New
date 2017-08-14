@@ -476,9 +476,9 @@ success_msg("Great job! Looks like you`re getting good with sequences!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:c056565056
 ## 9. Class: Integer and Numeric
 
-To force a number to be recognized as an integer, you need to add the letter L.
+To force a number to be recognized as an integer, you need to add the letter L. For example, `12L` would be forced to be represented as an integer.  
 
-Run the sample code to learn about how numeric values defined in different manners have different default class in R.
+Run the sample code to learn about how numeric values defined in different ways have different default class in R.
 
 *** =instructions
 Confirm that the class of 999L is integer.
@@ -522,14 +522,14 @@ class(999L)
 ```{r}
 test_error()
 test_output_contains("class(999L)", incorrect_msg = "Check the class of `999L` to make sure the L makes it an integer.")
-success_msg("Great, now let's move on to one more fun thing in this module.")
+success_msg("Great, move on to one more fun thing in this module.")
 ```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:1e7c932a3d
 ## 10. Coercion
 
-As we mentioned before, it is always good practice to keep track of the class of objects in R. When an element in R does not match the expected class, R usually tries to guess what we mean before throwing an error. That might create confusion or result in undetected mistakes. 
+As mentioned before, it is always good practice to keep track of the class of objects in R. When an element in R does not match the expected class, R usually tries to guess what you mean before throwing an error. That might create confusion or result in undetected mistakes. 
 
 Thus, it never hurts to use coercion functions to make sure the objects are of the right class.
 
@@ -575,6 +575,6 @@ as.numeric(desserts)
 ```{r}
 test_error()
 test_output_contains("as.numeric(desserts)", incorrect_msg = "Check the code again.")
-success_msg("Awesome!Doesn`t that feel wonderful. Now, you can try changing it back to characters, using the code as.character(x)`.")
+success_msg("Awesome! Doesn't that feel wonderful? Now, you can try changing it back to characters, using the code `as.character(x)`.")
 ```
 ----
