@@ -367,7 +367,7 @@ For example,to create a vector with the multiples of 7, smaller than 50, the cod
 Run the sample code to see how you can create a sequence of numbers within a certain range with a specified increment. 
 
 *** =instructions
-- Create a vector containing all the positive odd numbers smaller than 1000
+- Create a vector containing all the positive odd numbers smaller than 100
 - 
 
 *** =hint
