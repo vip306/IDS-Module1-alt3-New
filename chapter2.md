@@ -6,7 +6,9 @@ description :
 
 ## 1. Take a first look at your dataset
 
-In this series of exercises, you will examine the `murders` dataset. First of all, load the package `dslabs` and load the dataset `murders` using the `data()` function. Then use the `str()` function to get an idea of what variables are included.
+In this series of exercises, you will examine the `murders` dataset. You usually do this by loading the package `dslabs` and then, loading the dataset `murders` using the `data()` function. For this exercise, the `murders` dataset is already loaded. Your task is to examine the dataset using the `str()` function.
+
+`str(<dataset>)` gives you an idea of what variables are included in the dataset.
 
 *** =instructions 
 Use the `str()` function to check the structure of the `murders` dataset.
