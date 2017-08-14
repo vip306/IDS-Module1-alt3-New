@@ -355,19 +355,20 @@ success_msg("Isn`t that awesome! Let`s move to the next exercise!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:02d64318c8
 ## 7. Sequences
 
-`seq()` is another function in R with which we can easily generate numeric vectors with a certain pattern.
+`seq()` is a function in R with which you can easily generate numeric vectors with a certain pattern.
 
-We can also create different types of sequences in R. 
+You can create different types of sequences in R. 
 For example,to create a vector with the multiples of 7, smaller than 50, the code would be `seq (7, 49, 7)`, where:
 
 - the first argument defines the start,
 - the second the end, and
-- the third tells us how much to jump by (increments)
+- the third tells how much to jump by (increments)
 
-Run the sample code to see how we can create a sequence of numbers within a certain range with a specified increment. 
+Run the sample code to see how you can create a sequence of numbers within a certain range with a specified increment. 
 
 *** =instructions
-Create a vector containing all the positive odd numbers smaller than 1000.
+- Create a vector containing all the positive odd numbers smaller than 1000
+- 
 
 *** =hint
 ```{r}
