@@ -7,7 +7,7 @@ description :
 ## 1. Character vector
 
 Vectors are one-dimensional arrays that can store different types of data such as numeric data, character data, and logical data. 
-In R, we create a vector with the concatenate function `c()`.  
+In R, you create a vector with the concatenate function `c()`.  
 
 See how you would create a character vector in the sample code.
 
@@ -63,14 +63,14 @@ success_msg("Good job! Do you want to now try creating a numeric vector!?")
 
 ## 2. Numeric Vector  
 
-Now, let's learn to create a numeric vector. The main difference is that you don't need quotation marks. 
+Now, you will create a numeric vector. The main difference between a numeric and character vector is that you don't need quotation marks in numeric vector. 
 
 See how you would create a numeric vector in the sample code.
 
 *** =instructions
 
-- Create a numeric vector with the calories of the desserts from the previous exercise: 257, 355, 243, 411, 288.
-- Name the vector `calories`.
+- Create a numeric vector `calories` with the calories of the desserts from the previous exercise: 257, 355, 243, 411, 288
+- Type `calories` in the console to observe how the output looks like
 
 *** =hint
 Make sure your numbers are within parenthesis and have commas separating them.
@@ -104,7 +104,7 @@ calories <- c(257, 355, 243, 411, 288)
 ```{r}
 test_error()
 test_object("calories", incorrect_msg = "Check to match the numbers from the question!")
-success_msg("Awesome! Now you`ve learnt to store both numeric and character vectors!")
+success_msg("Awesome! Now you've learnt to create both numeric and character vectors!")
 ```
 ----
 
