@@ -109,7 +109,7 @@ success_msg("Awesome! Now you've learnt to create both numeric and character vec
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c0b17dfdc7
-## 3. Named Vectors
+## 3. Named Vector
 
 When you defined the numeric vector in the previous exercise, you listed the numbers in the same order as the desserts' names in the first exercise. Now, you will learn to use the character vector to name the numeric vector elements. 
 
@@ -120,7 +120,8 @@ You use the `names()` function to do this.
 You can see an example of how this is done in the sample code.
 
 *** =instructions
-Use the `names()` function and the objects defined in the previous exercises to give the numeric values corresponding dessert names.
+- Use the `names()` function and the objects defined in the previous exercises to give the numeric values (calories) their corresponding names (desserts)
+- Type `calories` in the console and observe how the vector has changed
 
 *** =hint
 Assign names to the numeric values. 
@@ -143,7 +144,7 @@ names(codes) <- countries
 codes
 
 # Dessert names and calories from the previous question
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 calories <- c(257, 355, 243, 411, 288)
 
 # Associate the dessert with the calories using the `names` function
@@ -164,7 +165,7 @@ names(codes) <- countries
 codes
 
 # Dessert names and calories from the previous question
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 calories <- c(257, 355, 243, 411, 288)
 
 # Associate the dessert with the calories using the `names` function
@@ -175,16 +176,16 @@ names(calories) <- desserts
 ```{r}
 test_error()
 test_function("names", incorrect_msg = "The numeric vector should be in the parenthesis.")
-success_msg("Great job! We now know the number of calories for these desserts!")
+success_msg("Great job! You have now learnt to create a named vector!")
 ```
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7c4dfa097b
 ## 4. Class
 
-When we use R to analyze data, it is always a good practice to keep track of the class of an object. 
+When you use R to analyze data, it is always a good practice to keep track of the class of an object. 
 
-We can do that using the `class()` command. 
+You can do that using the `class(<object name>)` command. 
 
 Common classes include: an integer, a numeric value, a character, a logical value, and a factor. 
 
@@ -201,7 +202,7 @@ Determine the class of `desserts`.
 *** =sample_code
 ```{r}
 # Store values for desserts, same as previous question
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 
 # Determine the class of `desserts`
 
@@ -211,7 +212,7 @@ desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding
 *** =solution
 ```{r}
 # Store values for desserts, same as previous question
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 
 # Determine the class of `desserts`
 class(desserts)
@@ -226,16 +227,16 @@ success_msg("That's great! Let's use some operators on this data now.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:925fcceb04
-## 5. Indexing elements of a vector
+## 5. Indexing Vector Elements (Part 1)
 
-If we want to display only select values from a vector, R can help us do that easily. 
+If you want to display only select values from a vector, R can help you do that easily. 
 
-We can use square brackets (`[]`) to specify which elements we would like to select, as can be seen in the example on the right.
+You can use square brackets (`[]`) to specify which elements you would like to select, as can be seen in the example on the right.
 
-Note that we could also type `cost [c(3,4,5)]` and get the same result. The `:` operator helps us condense the code and get consecutive values. 
+Note that you could also type `cost [c(3,4,5)]` and get the same result as `cost[3:5]`. The `:` operator helps you condense the code and get consecutive values. 
 
 *** =instructions
-Use the `[]` and `:` operators to access the calories of the first 3 desserts in the list of `desserts`.
+Use the `[]` and `:` operators to access the calories of the first 3 elements in the list of `calories`.
 
 *** =hint
 Square brackets and : are the important bits in this.
@@ -254,7 +255,7 @@ cost[3:5]
 cost[c(3,4,5)]
 
 # Defining dessert names and calories (code from previous exercises)
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 calories <- c(257, 355, 243, 411, 288)
 names(calories) <- desserts
 
@@ -269,7 +270,7 @@ names(calories) <- desserts
 cost[3:5]
 
 # Defining dessert names and calories (code from previous exercises)
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 calories <- c(257, 355, 243, 411, 288)
 names(calories) <- desserts
 
@@ -287,15 +288,19 @@ success_msg("Awesome! You`ve learnt how to make your work easier.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7e98f2ad1b
-## 6. Indexing vector elements continued...
+## 6. Indexing Vector Elements (Part 2) 
 
-In the previous question, we used operator `:` to access consective elements in a vector. Let's now see how we can access
+In the previous exercise, you used operator `:` to access consective elements in a vector. Now, you will learn to access
 any elements in a vector.
+
+You mention the index of the elements you want to display separated by commas. 
+
+`vct_name[c(index1,index2)]` will print the elements of the `vct_name` in `index1` and `index2` locations of the vector. 
 
 Run the sample code to see how this is done.
 
 *** =instructions
-Use the `[]` operator to access the calories of the `chocolate_mousse`(2nd) and `brownie`(3rd).
+Use the `[]` operator to access the calories of the `chocolate mousse`(2nd) and `pudding`(5th).
 
 *** =hint
 Use `c()` function to create a numeric vector to index elements of a vector.
@@ -313,7 +318,7 @@ names(cost) <- food
 cost [c(1,5)]
 
 # Defining dessert names and calories (code from previous exercises)
-desserts <- c("cheesecake", "chocolate_mousse", "brownie", "apple_pie", "pudding")
+desserts <- c("cheesecake", "chocolate mousse", "brownie", "apple pie", "pudding")
 calories <- c(257, 355, 243, 411, 288)
 names(calories) <- desserts
 
@@ -333,14 +338,14 @@ calories <- c(257, 355, 243, 411, 288)
 names(calories) <- desserts
 
 # Access the calories for chocolate mousse and brownie
-calories[c(2,3)]
+calories[c(2,5)]
 
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_output_contains("calories[c(2,3)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets.")
+test_output_contains("calories[c(2,5)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets.")
 success_msg("Isn`t that awesome! Let`s move to the next exercise!")
 ```
 ----
