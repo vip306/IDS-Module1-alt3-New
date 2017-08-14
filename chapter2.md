@@ -150,10 +150,13 @@ test_error()
 
 ## 4. Factors
 
-In the last exercise you found out that the type of the region variable is "factor". Now let’s take a closer look at this type of data.
+In the last exercise, you found out that the data type of the region variable is `factor`. This data type indicates categories. Now let’s take a closer look at this type of data.
+
+`nlevels(<variable>)` returns the number of levels or categories in that variable. 
 
 *** =instructions 
-Use the function nlevels() to check how many levels are there in the variable region.
+- Type `murders$region` in the console and observe the output 
+- Use the function `nlevels()` to check how many levels are there in the variable `region` in the `murders` dataset
 
 *** =hint 
 Use $ to access a variable in a data set.
@@ -188,9 +191,12 @@ test_error()
 
 --- type:NormalExercise lang:r xp:100 skills:1,3 key:f4b43c38fc
 
-## 5. Lists in R
+## 5. Lists
 
-Remember data sets are stored as data frames, and are essentially lists in R. Now let’s create a list.
+Remember datasets are stored as data frames, and are essentially lists in R. Now, let’s create a list.
+
+You use `list()` function to create lists. 
+For example, `x <- list(100, add, c(2.5, 8, 12))` creates a list of a numeric value, a function and a vector. 
 
 *** =instructions 
 - Create a list consisting three objects: a vector c(2,5,3), a numeric value $21.3$ and a function sin. 
@@ -198,7 +204,7 @@ Remember data sets are stored as data frames, and are essentially lists in R. No
 - Print the `list1`.
 
 *** =hint 
-Use list() to create a list.
+Use `list()` to create a list.
 
 *** =pre_exercise_code
 ```{r}
@@ -217,7 +223,7 @@ Use list() to create a list.
 *** =solution
 ```{r}
 # Create list1, which includes three objects: a vector c(2,5,3), a numeric value 21.3, and a function sin
-list1<-list(c(2,5,3), 21.3, sin)
+list1 <- list(c(2,5,3), 21.3, sin)
 
 # Print list1
 print(list1)
