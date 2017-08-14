@@ -192,12 +192,11 @@ success_msg("That was great! So, in 7 hours, the bacteria would have replicated 
 --- type:NormalExercise lang:r xp:100 skills:1 key:da368a277f
 ## 4. Advanced Arithmetic Operations 
 
-Now, calculate the area of Hagrid’s house and grounds.
+Now, calculate the total area of house and ground if `length` = $40 feet$, `width` = $30 feet$, and the `radius` of the semi-circular ground = $15 feet$.
 
 - `Area of rectangle = length * width`
 - `Area of a semi-circle: ½*pi*r^2 (pi = 3.14)`
 
-`length` = $40 feet$, `width` = $30 feet$, and the `radius` of the semi-circular ground = $15 feet$.
 
 *** =instructions
 
