@@ -281,8 +281,9 @@ Check out the sample code as a reference.
 
 *** =instructions
 - Create a dataframe called `treat_weight_rank` which will have three columns:
-    - the `Treatment` and `weight` columns from `RatPupWeight`
-    - and a new variable `rank` which is the ranking of weight of the pups, obtained by the `rank()` function.
+    - the `Treatment` and `Weight` columns from `RatPupWeight`
+    - and a new variable `rank` which is the ranking of weight of the pups, obtained by the `rank()` function
+- Type and run `treat_weight_rank` in the console to observe the data frame
 
 
 *** =hint
@@ -314,6 +315,9 @@ city_temps <- data.frame(name = city, temperature = temp)
 # Define variable `treat`
 
 
+# Define variable `weight`
+
+
 # Define a variable `ranks` to determine the weight size ranks
 
 
@@ -327,17 +331,21 @@ city_temps <- data.frame(name = city, temperature = temp)
 # Define variable `treat`
 treat <- RatPupWeight$Treatment
 
+# Define variable `weight`
+weight <- RatPupWeight$weight
+
 # Define a variable `ranks` to determine the weight size ranks
 ranks <- rank( RatPupWeight$weight)
 
 # Create a dataframe `treat_weight` with the treatment groups and their ranks
-treat_weight_rank <- data.frame(Treatment = treat, ranks = ranks)
+treat_weight_rank <- data.frame(Treatment = treat, Weight = weight, ranks = ranks)
 ```
 
 *** =sct
 ```{r}
 test_error()
 test_object("treat", undefined_msg = "Define treat first!", incorrect_msg = "Assign treatment group values from dataset to object.")
+test_object("weight", undefined_msg = "Define weight first!", incorrect_msg = "Assign weight values from dataset to object.")
 test_object("ranks", undefined_msg = "Define ranks first!", incorrect_msg = "Define the rank of the weight values!")
 test_object("treat_weight_rank", undefined_msg = "Define the dataframe first.", incorrect_msg = "Use the command similar to the example.")
 success_msg("That`s awesome! You got this!")
