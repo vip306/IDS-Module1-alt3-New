@@ -361,9 +361,9 @@ Use the sample code using the `murders` dataset as a reference. For this exercis
 
 *** =instructions
 
-- Repeat the previous exercise but this time, order `treat_weight` so that the ratpups are ordered from least heavy to most.
-- Create an object `ind` that stores the indices needed to order the weight values, using the `order` command.  
-- Use the bracket operator `[]` to re-order each column in the data frame.
+- Repeat the previous exercise but this time, order `treat_weight` so that the ratpups are ordered from least heavy to most
+- Create an object `ind` that stores the indices needed to order the weight values, using the `order` command
+- Use the bracket operator `[]` to re-order each column in the data frame
 
 
 *** =hint
@@ -372,6 +372,7 @@ Use the sample code using the `murders` dataset as a reference. For this exercis
 ```{r}
 library(nlme)
 data(RatPupWeight)
+
 library(dslabs)
 data(murders)
 ```
@@ -450,10 +451,13 @@ Take a look at a preloaded dataset `na_example`. It is a set of numbers from 1 t
 In R, missing values are represented by `NA`.
 
 You can quickly examine the object using:
+
       - `data(na_example)`  
       - `str(na_example)`
 
-Function `is.na()` returns a logical `TRUE` or `FALSE` indicating whether a value is `NA`. Recall that you can use a logical vector in square brackets to access values in a vector that satisfy certain conditions. 
+Function `is.na()` returns a logical `TRUE` or `FALSE` indicating whether a value is `NA`. 
+
+Recall that you can use a logical vector in square brackets to access values in a vector that satisfy certain conditions. 
 
 *** =instructions
 
@@ -506,14 +510,19 @@ success_msg("Great job! Now let's move to one last thing in this chapter.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7d6eebca10
-## 8. Calculations with NA 
+## 8. Removing NA for Calculations  
 
-Run `mean(na_example)` on the right. As you can see, `NAs` mess up some operations in R and we 
-might want to exclude them for those purposes. The `na.rm` argument in many functions helps remove `NAs`.
+Run `mean(na_example)` on the right. As you can see, `NAs` mess up some operations in R. 
+
+You might want to exclude them for those purposes. You can do this in 2 ways: 
+
+1. Use the `na.rm=TRUE` argument in the function performing the calculation on the dataset
+2. Use `!` operator along with `is.na()` function and obtain the non `NA` values using the `[]` operator
 
 *** =instructions
 
-Calculate the mean of all non-missing data in `na_example`, and store the mean in `mean_na_rm`. 
+- Calculate the mean of all non-missing data in `na_example`, and store the mean in `mean_na_rm`
+- Run `mean_na_rm` in the console to check the output
 
 *** =hint
 
