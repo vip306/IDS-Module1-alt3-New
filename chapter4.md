@@ -453,12 +453,13 @@ You can quickly examine the object using:
       - `data(na_example)`  
       - `str(na_example)`
 
-Function `is.na` returns a logical `TRUE` or `FALSE` indicating whether a value is `NA`. Recall that you can use a logical vector in square brackets to access values in a vector that satisfy certain conditions. 
+Function `is.na()` returns a logical `TRUE` or `FALSE` indicating whether a value is `NA`. Recall that you can use a logical vector in square brackets to access values in a vector that satisfy certain conditions. 
 
 *** =instructions
 
-- Think of a way to find out how many `NAs` there are in `na_example`.
-- Store the number in `count_na`.
+- Think of a way to find out how many `NAs` there are in `na_example`
+- Store the number in `na_count`
+- Print the number of `NA` in the dataset (`na_count`)
 
 *** =hint
 One way is to combine `is.na()` with `sum()`. Another way is to extract all `NAs` in the vector and use `length()`.
@@ -476,6 +477,10 @@ na_example[na_indices]<-NA
 # Find out how many NAs there are in `na_example` and save the count in `na_count`
 
 
+#Find out how many NAs are present in na_example
+
+
+
 ```
 
 *** =solution
@@ -486,12 +491,16 @@ na_count <- sum(is.na(na_example))
 # Or
 na_count <- length(na_example[is.na(na_example)])
 
+#Find out how many NAs are present in na_example
+na_count
+
 ```
 
 *** =sct
 ```{r}
 test_error()
 test_object("na_count", undefined_msg = "Make sure to define na_count first.", incorrect_msg = "Check instructions for the code.")
+test_object("na_count", undefined_msg = "Make sure to define na_count first.", incorrect_msg = "Check for spelling errors")
 success_msg("Great job! Now let's move to one last thing in this chapter.")
 ```
 ----
