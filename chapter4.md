@@ -102,7 +102,8 @@ For example, if `vct = [6 3 1 5]`, the `order(vct) = [3 2 4 1]`.
 This means that, the smallest number (which is 1) in `vct` occurs in the 3rd place, while the largest number (which is 6) occurs in the first place. 
 
 *** =instructions
-- In an object `o`, store index numbers of `RatPupWeight$weight` using `order()` function
+- In an object `weight`, store `RatPupWeight$weight`
+- In an object `o`, store index numbers of `weight` using `order()` function
 - Find the index of the smallest weight 
 
 *** =hint
@@ -155,11 +156,12 @@ success_msg("Great job!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:44a224bc10
 ## 3. Index of max and min values
 
-A more compact way to perform the same operation in the previous exercise is using the `which.min()` function. 
-Again, use the sample code as a reference.
+A compact way to perform the same operation in the previous exercise is using the `which.min()` function. This function will return the index of the smallest value in the vector. Similarly, `which.max()` will return the index of the largest value. 
+
+Use the sample code as a reference.
 
 *** =instructions
-Use the `which.min` function in one line of code to find the index number of the pup that has the smallest weight.
+Use the `which.min` function in one line of code to find the index number of the pup that has the smallest weight
 
 *** =hint
 Use `which.min` directly.
@@ -203,16 +205,20 @@ success_msg("Great ! You`ve learnt another code in R!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:90b98a2790
-## 4. Sorting in a dataframe
+## 4. Using `which.min()`
 
-Now we know how much the smallest rat pup weighed and we know which row represents it. However, what treatment (low, high, control) did it receive ?
+Now, you know how much the smallest rat pup weighed and also, which row represents it. 
+
+However, what treatment (low, high, control) did it receive?
+
 There are a few ways to find that out. Check out the sample code on `murders` for one example.
 
 *** =instructions
-- Define a variable `treat` to be the `Treatment` groups.
-- Report the treatment group of the rat pup with the least weight using the `treat[which.min(RatPupWeight$weight)]` code.
+- Define a variable `treat` to store `RatPupWeight$Treatment`
+- Report the treatment group of the rat pup with the least weight
 
 *** =hint
+Apply `which.min()` on `RatPupWeight$weight` and find the corresponding treatment
 
 *** =pre_exercise_code
 ```{r}
@@ -255,27 +261,33 @@ treat[which.min(RatPupWeight$weight)]
 test_error()
 test_object("treat", undefined_msg = "Define treat first!", incorrect_msg = "Assign treatment group values from dataset to object.")
 test_output_contains("treat[which.min(RatPupWeight$weight)]", incorrect_msg = "Copy code from instructions.")
-success_msg("Awesome! Now we have the treatment groups of the rat pups as well !")
+success_msg("Awesome! Now you have the treatment groups of the rat pups as well!")
 ```
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:47c076de70
 ## 5. Data Frames and Ranks
 
-Now let's take a look at how to create a data frame. The function `data.frame` takes both data frames and vectors as arguments.
+Now, you will learn to create a data frame. The function `data.frame()` takes both data frames and vectors as arguments.
 
 As long as vectors have the same length, `data.frame` can bind them together to create a new data frame. 
+
+`rank()` is a function that ranks the elements of a vector. It returns a vector that contains the ranks of the corresponding elements in its argument vector. It is similar to `order()` function. The difference between them is that, `order()` returns indices while `rank()` returns ranks. 
+
+For example, if `vct = (3, 5, 3, 8, 2)`, then, `rank(v) = (2.5, 4, 2.5, 5, 1)` and `order(v) = (5, 1, 3, 2, 4)`. 
 
 Check out the sample code as a reference.
 
 
 *** =instructions
-- Create a dataframe called `treat_weight_rank` which with three columns:
+- Create a dataframe called `treat_weight_rank` which will have three columns:
     - the `Treatment` and `weight` columns from `RatPupWeight`
     - and a new variable `rank` which is the ranking of weight of the pups, obtained by the `rank()` function.
-- There are several ways to do this. You can either create the whole dataframe at once, or begin with one or two columns and then add the other(s).
+
 
 *** =hint
+
+There are several ways to do this. You can either create the whole dataframe at once, or begin with one or two columns and then add the other(s).
 
 *** =pre_exercise_code
 ```{r}
