@@ -6,25 +6,25 @@ description : This chapter deals with getting more of an insight into the data w
 
 ## 1. Sort 
 
-In exploratory data analysis, we often want to sort the data. Let's see how we can do that with a sample dataset. 
+In exploratory data analysis, you often might want to sort the data. You will now learn how you can do that with a sample dataset. 
 
-The dataset we're using in this chapter is called `RatPupWeight`. Since `RatPupWeight` is a built-in dataset in R's `nmle` package, there is no need to load the data. 
+The dataset you will use in this chapter is called `RatPupWeight`. Since `RatPupWeight` is a built-in dataset in R's `nmle` package, there is no need to load the data. 
 
-The variables we're using are:
+The variables you will use are:
 
-weight     : Birth weight of the rat pup
-sex        : Sex of the rat pup (Male, Female)
-Litter     : Litter ID number
-Lsize      : Number of pups per litter
-Treatment  : Level of dosage given to to the litter (High, Low, Control)
+- weight     : Birth weight of the rat pup
+- sex        : Sex of the rat pup (Male, Female)
+- Litter     : Litter ID number
+- Lsize      : Number of pups per litter
+- Treatment  : Level of dosage given to to the litter (High, Low, Control)
 
 To have a look at the dataset, simply run `RatPupWeight` in the R console.
 
 *** =instructions
-- Use the `$` operator to access the weight column and store the values in object `weight`.
-- Then use the `sort()` function to redefine `weight` so that it is sorted.
-- Finally use the `[]` operator to report the smallest weight. 
-- Use sample code on the `murders` dataset (preloaded in your working environment) as reference.
+- Use the `$` operator to access the weight column and store the values in object `weight`
+- Use the `sort()` function to redefine `weight` so that it is sorted
+- Use the `[]` operator to report the smallest weight
+- Use sample code on the `murders` dataset (preloaded in your working environment) as reference
 
 *** =hint
 Print `weight` and see if it is sorted in an ascending or descending order.
