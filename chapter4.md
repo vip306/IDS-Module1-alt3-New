@@ -95,13 +95,18 @@ success_msg("Good job! Now you know how to sort data in ascending order.")
 
 Sometimes, you might need the index of a certain element of a vector. For example, you know the smallest number in a vector, but you might want to know its position (or index). 
 
-The `order()` function creates a vector of indices that correspond to the vector sorted in ascending order. For example, if `vct = [6 3 1 5]`, the `o(vct) = [3 2 4 1]`. This means that, the smallest number (which is 1) in `vct` occurs in the 3rd place, while the largest number (which is 6) occurs in the first place. 
+The `order()` function creates a vector of indices that correspond to the vector sorted in ascending order. 
+
+For example, if `vct = [6 3 1 5]`, the `order(vct) = [3 2 4 1]`. 
+
+This means that, the smallest number (which is 1) in `vct` occurs in the 3rd place, while the largest number (which is 6) occurs in the first place. 
 
 *** =instructions
-Find out the index number of the rat pup with the smallest weight size using `o()`
+- In an object `o`, store index numbers of `RatPupWeight$weight` using `order()` function
+- Find the index of the smallest weight 
 
 *** =hint
-The smallest weight will be in the first element of `o(weight)`
+The smallest weight will be in the first element of object `o`
 
 *** =pre_exercise_code
 ```{r}
