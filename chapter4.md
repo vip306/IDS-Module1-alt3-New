@@ -93,7 +93,7 @@ success_msg("Good job! Now you know how to sort data in ascending order.")
 --- type:NormalExercise lang:r xp:100 skills:1 key:c55b4ac0f9
 ## 2. Order
 
-Sometimes, you might need the index of a certain element of a vector. For example, you know the smallest number in a vector, but you might want to know its position (or index) in the vector. 
+Sometimes, you might need the index of a certain element of a vector. For example, you know the smallest number in a vector, but you might want to know its position (or index). 
 
 The `order()` function creates a vector of indices that correspond to the vector sorted in ascending order. For example, if `vct = [6 3 1 5]`, the `o(vct) = [3 2 4 1]`. This means that, the smallest number (which is 1) in `vct` occurs in the 3rd place, while the largest number (which is 6) occurs in the first place. 
 
