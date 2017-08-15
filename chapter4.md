@@ -353,17 +353,17 @@ success_msg("That`s awesome! You got this!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:22594ff7ec
-## 6.  Sort a dataframe
+## 6.  Sort a data frame
 
-We have practiced sorting a vector by its own order. Now try to sort every column of a data frame by the values of one of the variables (columns).
+You have practiced sorting a vector by its own order. Now, you will learn to sort every column of a data frame by the values of one of the variables (columns).
 
-Use the sample code using the `murders` dataset as a reference. For your exercise, you will continue to work on the `RatPupWeight` dataframe.
+Use the sample code using the `murders` dataset as a reference. For this exercise, you will continue to work on the `RatPupWeight` data frame.
 
 *** =instructions
 
-- Repeat the previous exercise but this time order `treat_weight` so that the ratpups are ordered from least heavy to most.
-- Create an object ind that stores the indexes needed to order the weight values, using the `order` command.  
-- Then use the bracket operator `[]` to re-order each column in the data frame.
+- Repeat the previous exercise but this time, order `treat_weight` so that the ratpups are ordered from least heavy to most.
+- Create an object `ind` that stores the indices needed to order the weight values, using the `order` command.  
+- Use the bracket operator `[]` to re-order each column in the data frame.
 
 
 *** =hint
@@ -393,6 +393,9 @@ data(RatPupWeight)
 # Define variable `treat`
 
 
+# Define variable `weight`
+
+
 # Define a variable `ranks` to determine the weight size ranks
 
 
@@ -415,11 +418,14 @@ murders <- murders[order_total,]
 # Define variable `treat`
 treat <- RatPupWeight$Treatment
 
+# Define variable `weight`
+weight <- RatPupWeight$weight
+
 # Define a variable `ranks` to determine the weight size ranks
-ranks <- rank( RatPupWeight$weight)
+ranks <- rank(weight)
 
 # Define a variable `ind` to store the indexes needed to order the weight values
-ind <- order(treat)
+ind <- order(weight)
 
 # Create a dataframe `treat_weight` with the treatment groups and their ranks and ordered from lightest to heaviest
 treat_weight <- data.frame(Treatment = treat[ind], ranks = ranks[ind])
@@ -429,6 +435,7 @@ treat_weight <- data.frame(Treatment = treat[ind], ranks = ranks[ind])
 ```{r}
 test_error()
 test_object("treat", undefined_msg = "Define treat first!", incorrect_msg = "Assign treatment group values from dataset to object.")
+test_object("weight", undefined_msg = "Define weight first!", incorrect_msg = "Assign weight values from dataset to object.")
 test_object("ranks", undefined_msg = "Define ranks first!", incorrect_msg = "Define the rank of the weight values!")
 test_object("ind", undefined_msg = "Define ind first.", incorrect_msg = "Use the order command as well.")
 test_object("treat_weight", undefined_msg = "Define the dataframe first.", incorrect_msg = "Use the command similar to the example.")
