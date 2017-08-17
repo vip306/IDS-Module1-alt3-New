@@ -21,11 +21,11 @@ You can use `mutate` to do this as follows:
 
 `fruits <- mutate(fruits, total = apples + oranges)`
 
-For this exercise, the `dplyr` package is already loaded. You will add a new column `rate` to the `murders` dataset that is defined as `total/population * 100000`. 
+For this exercise, the `dplyr` package is already loaded. You will add a new column `rate` to the `murders` data frame that is defined as `total/population * 100000`. 
 
 *** =instructions
-* Calculate the "per 100,000" murder rate for each state
-* By using `mutate`, add a column called `rate` containing this information to the `murders` dataframe.
+- Use `mutate()` function with the help of the syntax above to add a column `rate` to the `murders` data frame
+- After running the function above, run `str(murders)` in the console to observe how the `murders` data frame has changed  
 
 *** =hint
 Use code `mutate(murders, rate =  total / population * 100000)`
@@ -85,12 +85,18 @@ success_msg("Awesome! Let's learn another command with mutate.")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:545fbadeea
 ## 2. Mutate and rank 
-Now that we have calculated the murder rate for each state, we want to order our dataset by the size of the murder rate. We want to identify the states with the highest murder rate, so let us add a column `rank` that assigns scores to the states by descending values of `rate`. You can create several new columns in just one line of `mutate` code.
+
+You can create several new columns in just one line of `mutate` code. 
+
+In this exercise, you will add another column `rank` that ranks the states by their `rate` which you added in the previous exercise. 
+
+You want to identify the states with the highest murder rate. So, add a column `rank` that assigns scores to the states by descending values of `rate`. Recall that `rank()` function assigns a rank of 1 to the lowest value. 
 
 *** =instructions
-* Use the function `mutate` again to add a column `rate` with the per-100,000- murder rate (same as in previous exercise).
-
-* Add a `rank` column which assigns 1 to the state with the highest murder rate, 2 to the state with the second-highest murder rate, and so on.
+* Use the function `mutate` again to add a column `rate` with the per-100,000- murder rate (same as in previous exercise)
+* In the same command, add a `rank` column which assigns 1 to the state with the highest murder rate, 2 to the state with the second-highest murder rate, and so on
+* Use the `-` operator within the `rank()` function to rank in this order
+* Run `murders` in the console to see how the data frame has changed 
 
 *** =hint
 Use the function `rank` and remember it ranks form lowest to highest by default. Use the `-` operator for descending order.
@@ -112,7 +118,8 @@ data(murders)
 
 # Use mutate to add a rate column,
 # then add `rank` (highest to lowest) and store in `murders`
-murders <- mutate(murders, rate =  total / population * 100000, rank = )
+
+
 ```
 
 *** =solution
