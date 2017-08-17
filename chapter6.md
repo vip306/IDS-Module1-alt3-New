@@ -5,11 +5,20 @@ description : R provides a powerful and convenient way of indexing vectors. We'r
 --- type:NormalExercise lang:r xp:100 skills:1 key:6bb68b8400
 ## 1. Logical Vectors
 
-We’re using the same dataset as we did in the chapter on `Sorting` - `women`.
+A logical vector contains `TRUE` or `FALSE` values based on a logical criteria you define. 
+
+For example, if `vct = [2,3,4,1,5]` and you want to find which elements of `v` are less than 4, you can create a logical vector with the following command: 
+`lvct <- vct < 4`
+This would result in the logical vector `lvct = [TRUE TRUE FALSE TRUE FALSE]`. 
+
+You can use any of the logical operators `<`, `>` or `=`. 
+
+For this exercise, a dataset `women` is loaded. Follow the instructions to define and print the logical vector.  
 
 *** =instructions
-Compute the weight by height rate for each tree and store it in an object called `weight_rate`.
-Then use the logical operators to create a logical vector, name it `low`, that tells us which entries of weight_rate are lower than its mean of `2`.
+- In an object `weight_rate`, store `women$weight`/ `women$height` 
+- Create a logical vector `low` for the condition `weight_rate < 2`
+- Print the logical vector `low` and observe the result
 
 
 *** =hint
@@ -56,17 +65,23 @@ success_msg("Great job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a76be07302
-## 2. Use logical vector to get indices
+## 2. Indices of a Logical Vector
 
-The code `which` helps us know directly, which values are low or high etc. Let's use it in this question.
+As you learnt earlier, a logical vector has `TRUE` or `FALSE` elements. 
+
+You can find out the indices of the `TRUE` elements using the `which()` function. 
+
+For `lvct = [TRUE TRUE FALSE TRUE FALSE]`, `which(lvct)` would print `1 2 4` since those elements are `TRUE` and satisfy the logical condition you had defined. 
+
+For this exercise, you will repeat the instructions from the previous exercise, and use the `which()` function to print the indices for the elements that satisfy the condition. 
 
 *** =instructions
-Use the results from the previous exercise and the function `which` to determine the indices of `weight_rate` associated with values lower than 2.
+- In an object `weight_rate`, store `women$weight`/ `women$height` 
+- Create a logical vector `low` for the condition `weight_rate < 2`
+- Use `which()` to determine the indices of `weight_rate` associated with values lower than 2
 
 *** =hint
-```{r}
 
-```
 
 *** =pre_exercise_code
 ```{r}
