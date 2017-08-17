@@ -65,7 +65,7 @@ success_msg("Great job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a76be07302
-## 2. Indices of a Logical Vector
+## 2. Extracting Indices of a Logical Vector
 
 As you learnt earlier, a logical vector has `TRUE` or `FALSE` elements. 
 
@@ -129,13 +129,21 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:43f34535d7
-## 3. Use indexing to access values of a vector
+## 3. Extracting values of a Vector from Indices
+
+Now that you have learnt how to extract the indices of a vector that meet a logical condition, you can access the values of the original vector for those particular indices using square brackets `[]`. 
+
+For example: `food$cost[low]`, would give us the cost of food lower than 1 (assuming `low <- food$cost < 1`)
+
+For this exercise, you will work with the `women` dataset, repeat the instructions from the previous exercise, and retrieve the values of `women$height` that meet the logical condition `weight_rate < 2`. 
 
 
 *** =instructions
-Use the results from the previous exercise to report the indices of women with weight rate lower than 2, using the square brackets to retrieve the heights of those women from the dataset.
+- In an object `weight_rate`, store `women$weight`/ `women$height` 
+- Create a logical vector `low` for the condition `weight_rate < 2`
+- Use square brackets to retrieve the heights of those women meeting the logical condition
 
-For example: `food$cost[low]`, would give us the cost of food lower than 1.
+
 
 *** =hint
 
@@ -185,13 +193,18 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a15f758c03
-## 4. Combined logical expressions
+## 4. Combining logical conditions
 
+You can also combine logical conditions using the `&` operator. This helps you extract values of a dataset that satisfy more than one logical condition. 
+
+For example, `index <- low & food$courses=="Desserts"`, would store the indices of the `food` dataset that satisfies the condition defined by `low` and also has `Desserts` in the `food$courses` column. 
+
+For this exercise, you will extend the code from the previous exercises to combine 2 logical conditions: Weight rate < 2 and Women with height = 60 inches. 
 
 *** =instructions
 
-Now extend the code from exercise 2 and 3 to report the weight of the women whose height is 60 inches with weight rates lower than 2.
-For example: `low & food$courses=="Deserts"`, would give us the deserts from the courses variable in the food dataset.  
+- In an object `ind`, store the indices of `women` dataset that satisfy `low` and `women$height==59` 
+- Print the `women$weight` corresponding to those indices 
 
 
 *** =hint
@@ -216,7 +229,7 @@ weight_rate<-women$weight/women$height
 # Store the `weight_rate < 2` in `low`
 low <- weight_rate < 2
 
-# Store height=60in, with weight rates lower than 2 in `ind`
+# Store indices in 'ind' that satisfy height=59in and weight rates lower than 2
 
 
 # Get weight of that entry
@@ -232,8 +245,8 @@ weight_rate<-women$weight/women$height
 # Store the `weight_rate < 2` in `low`
 low <- weight_rate < 2
 
-# Store height=60in, with weight rates lower than 2 in `ind`
-ind <- low & women$height== "60"
+# Store indices in 'ind' that satisfy height=59in and weight rates lower than 2
+ind <- low & women$height==59
 
 # Get weight of that entry
 women$weight[ind]
@@ -249,12 +262,20 @@ success_msg("Wasn`t that good! Let`s move to the next one.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f2004ac34f
-## 5. Average and below average
+## 5. Operations on Logical Conditions
+
+Since a logical condition returns a vector of `TRUE` and `FALSE` values, you can perform simple arithmetic operations on this vector. For this purpose, R considers the `TRUE` values as `1` and `FALSE` values as `0`. 
+For example, you could use the `sum()` function to calculate the number of elements meeting the logical condition. 
+
+For this exercise, you will work with the `women` dataset, and calculate the number of women whose `weight_rate` is greater than the average `weight_rate`.  
 
 *** =instructions
-In a previous exercise we computed the weight rate for each tree. We know the mean for the weight rate to be 2. How many women have a weight rate above the average?
+- In an object `avg`, store the the mean of `weight_rate` using `mean()` function
+- Find the number of women with `weight_rate` greater than the `avg` 
 
 *** =hint
+
+Use the `sum()` function with the logical condition 
 
 *** =pre_exercise_code
 ```{r}
@@ -303,13 +324,20 @@ success_msg("Awesome!")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:19320f72ab
 ## 6. Match
+You will use the `murders` dataset for the next three exercises.
 
-We’ll use the `murders` dataset for the next three exercises.
+Sometimes, you might want to check if a larger vector has elements that are also present in a smaller vector. 
 
-The `match()` function gives the index numbers of observations that match a supplied vector mentioned above, and then you can use `[]` to acess the names of observations that matched positively.
+The `match()` function takes 2 vectors as arguments and gives the index numbers of elements in the vector of interest that match the given vector. 
+
+You can then use the indices with `[]` to access the other data corresponding to the matched elements.
+
+In this exercise, you want to find out the state names in the `murder` dataset for a given set of abbreviations "NH", "OH" and "IN". You will use the `match()` function to achieve this. 
 
 *** =instructions
-What states are represented by abbreviations "NH", "OH"and "TN"?
+- Create an object `abbs` and store the abbreviations "NH", "OH"and "TN"
+- In an object `ind`, store the results of matching `abbs` with `murders$abb`
+- Use `[]` and `ind` to extract the `murders$state` values corresponding to the abbreviations 
 
 *** =hint
 As an example, `match(x, y)` finds the index values of `y` that match with `x`.
