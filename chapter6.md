@@ -332,7 +332,7 @@ The `match()` function takes 2 vectors as arguments and gives the index numbers 
 
 You can then use the indices with `[]` to access the other data corresponding to the matched elements.
 
-In this exercise, you want to find out the state names in the `murder` dataset for a given set of abbreviations "NH", "OH" and "IN". You will use the `match()` function to achieve this. 
+In this exercise, you want to find out the state names in the `murder` dataset for a given set of abbreviations "NH", "OH" and "TN". You will use the `match()` function to achieve this. 
 
 *** =instructions
 - Create an object `abbs` and store the abbreviations "NH", "OH"and "TN"
