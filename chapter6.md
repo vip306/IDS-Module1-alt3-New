@@ -387,12 +387,13 @@ success_msg("Awesome!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:beea127137
 ## 7. %in%
 
-If, rather than a vector of index numbers, we want a logical vector that tells us whether or not each element of a vector is in another vector, we can use the operator `%in%`. Check the sample code to see how it works. 
+If, instead of a vector of index numbers, you want a logical vector that tells you whether or not each element of a vector is in another vector, you can use the operator `%in%`. 
 
 Note: The true state abbreviations are stored in `murders$abb`.
 
 *** =instructions
-Use the `%in%` operator to create a logical vector that answers which of the following strings are actual state abbreviations in the `murders` dataset: "ND", "NE", "NM", "NN", "NY".
+- In an object `abbs`, store the character vector with abbreviations "ND", "NE", "NM", "NN", "NY"
+- Use the `%in%` operator to create and print a logical vector that compares `abbs` and `murders$abb` dataset
 
 *** =hint
 Use code `abbs%in%murders$abb`.
@@ -437,13 +438,18 @@ success_msg("Awesome!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:65a74691fd
 ## 8. Negation operator 
 
-*** =instructions
-
 In the previous exercise you created a logical vector indicating whether the character strings "ND", "NE", "NM", "NN", "NY" are actual state abbreviations in `murders`. 
 
-Now try to find the character strings that are *not* abbreviations using the negation operator `!`. 
+You can use the negation operator `!` to reverse the above operation. That is, in this example, to find the abbreviation that is not part of the larger vector `murders$abb`.   
 
 Note: The true state abbreviations are stored in `murders$abb`.
+
+
+*** =instructions
+- Create a character vector `abbs` with elements "ND", "NE", "NM", "NN", "NY"
+- In an object `ind`, store the index of the element in `abbs` not present in `murders$abb` using `which()` function and `!` operator
+- Print the values of `abbs` corresponding to `ind` using `[]`
+
 
 *** =hint
 Use the code `ind <- which(!abbs%in%murders$abb)`.

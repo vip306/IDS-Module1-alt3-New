@@ -5,16 +5,26 @@ description : Just as the name suggests, we're going to practice the basics of d
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa7b6092fb
 ## 1. Mutate
 
-Data manipulation? Are you telling me to lie with my data? By no means! The term data manipulation refers to tasks that you perform to facilitate analysis on the data. In this chapter you will learn several helpful techniques that will allow you to *clean* and *wrangle* a dataset so that it becomes easier to use later on.
+The term 'data manipulation' refers to tasks that you perform to facilitate analysis on the data. In this chapter, you will learn several helpful techniques that will allow you to *clean* and *wrangle* a dataset, so that it becomes easier to use later on.
 
-For many of those tasks we will use the `dplyr` package, a versatile toolbox that expands upon `base R`. Many users find its syntax more intuitive when it comes to data manipulation tasks. So let's dive right in and explore one of the most useful `dplyr` functions.
+For many of those tasks, we will use the `dplyr` package, a versatile toolbox that expands upon `base R`. Many users find its syntax more intuitive when it comes to data manipulation tasks. 
 
-`mutate` essentially adds a new column to a dataframe. This is useful if we want to calculate a summary statistic of a variable, or combine two variables, without altering the original data.
+One of the most useful `dplyr` functions is `mutate`. It adds a new column to a dataframe. 
 
-In this exercise, you will load in the `dplyr` package and add a new column to the `murders` dataset.
+This is useful if you want to calculate a summary statistic of a variable, or combine two variables, without altering the original data.
+
+Consider this example: You have a dataset `fruits` with 2 columns `apples` and `oranges`. 
+
+You want to add a third column `total` that is a sum of the existing 2 columns. 
+
+You can use `mutate` to do this as follows: 
+
+`fruits <- mutate(fruits, total = apples + oranges)`
+
+For this exercise, the `dplyr` package is already loaded. You will add a new column `rate` to the `murders` dataset that is defined as `total/population * 100000`. 
 
 *** =instructions
-* Calculate the "per-100.000" murder rate for each state.
+* Calculate the "per 100,000" murder rate for each state
 * By using `mutate`, add a column called `rate` containing this information to the `murders` dataframe.
 
 *** =hint
