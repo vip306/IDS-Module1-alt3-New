@@ -303,12 +303,19 @@ success_msg("That's great! Let's move to the next exercise.")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:18111c7bfd
 ## 5. Filter and %in%
-So far we have dealt with relatively short `filter` statements, where we either selected variables less than or equal to a certain value (`rank <= 8`), or equal to a certain string value (`region != "West"`).
 
-If we are dealing with a longer list of criteria, the `%in%` operator becomes important. It allows us to check whether an observation takes on *one* of the specified values. In our example of the hypothetical dataset with different professions, this would allow us to select all observations that are part of a certain group by writing `filter(data, profession %in% c("Barber", "Chef", "Doctor"))`.
+You have dealt with relatively short `filter` statements, where you selected variables using a logical operation, such as `rank <= 8` and `region != "West"`.
+
+If you are dealing with a longer list of criteria, the `%in%` operator becomes important. 
+
+It allows you to check whether an observation takes on *one* of the specified values. 
+
+In the example of the hypothetical dataset with different professions, this would allow you to select all observations that are part of a certain group by writing `filter(data, profession %in% c("Barber", "Chef", "Doctor"))`.
 
 *** =instructions
-Create a new dataframe called `murders_ns` with only the states from the Northeast and the South. How many states are in this category? 
+- In a new dataframe `murders_ns`, store filtered states from `murders` dataset, whose `region` is either "Northeast" or "South" 
+- Use `nrow()` function to print the number of states that are in `murders_ns`
+- Run `murders_ns` in the console and observe the data frame 
 
 
 *** =hint
