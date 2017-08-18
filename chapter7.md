@@ -527,6 +527,8 @@ In this exercise, you will use pipes to repeat and combine all the steps you did
     - Use `mutate()` for `murders` dataframe to add the murder `rate` for each state and create a `rank` variable (descending order of `rate`)
     - Use `filter()` to select the states that are in the Northeast or South and have a murder rate of less than 2
     - Use `select()` to select the columns `state`, `rate` and `rank`
+- Run `my_states` in the console and observe the data frame
+
 
 *** =hint
 ```{r}
