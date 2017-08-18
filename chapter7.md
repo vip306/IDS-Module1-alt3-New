@@ -516,13 +516,17 @@ success_msg("You're getting a pretty good hang of stuff now!")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:1b45c7acac
 ## 8. Combining functions (3)
-You have almost mastered the basics of data manipulation. Now it is time to polish what we have learned so far and become even more efficient. In this exercise, we will use pipes to repeat and combine all the steps we have taken in previous exercises.
+
+You have almost mastered the basics of data manipulation. Now, it is time to polish and apply what you have have learnt so far and become even more efficient. 
+
+In this exercise, you will use pipes to repeat and combine all the steps you did in previous exercises.
 
 
 *** =instructions
-* Calculate the murder `rate` for each state and create a `rank` variable (descending order of `rate`).
-* Select the states that are in the Northeast or South and have a murder rate of less than 2. 
-* Select the columns `state`, `rate` and `rank`. Use `%>%` to combine these three steps and store the final result in the object `my_states`.
+- In a dataframe `my_states`, use `%>%` to combine the following operations
+    - Use `mutate()` for `murders` dataframe to add the murder `rate` for each state and create a `rank` variable (descending order of `rate`)
+    - Use `filter()` to select the states that are in the Northeast or South and have a murder rate of less than 2
+    - Use `select()` to select the columns `state`, `rate` and `rank`
 
 *** =hint
 ```{r}
@@ -555,6 +559,11 @@ library(dslabs)
 data(murders)
 
 # Create new data frame called `my_states` (with specifications in the instructions)
+my_states <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate)) %>%
+filter(region %in% c("Northeast", "South") & rate < 2) %>%
+select(state, rate, rank)
+
+# You could also use this alternative form where you type `murders` before `mutate` function
 my_states <- murders %>% 
 mutate(rate =  total / population * 100000, rank = rank(-rate)) %>%
 filter(region %in% c("Northeast", "South") & rate < 2) %>%
