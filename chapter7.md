@@ -217,14 +217,24 @@ success_msg("Great job!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:42352c70c5
-## 4. Filter and ! 
-Filter and shout? No worries, `R` is not trying to yell at us. The `!` symbol means *not* and can be used to reverse an operation.
+## 4. Filter and Negation Operator '!'
 
-This operator comes in handy when we want to select all observations that do not fall into a certain category. For example, imagine we had a dataset including a column with professions and we wanted to exclude one type of profession. It would be tedious to write `filter(data, profession = "...")` and list all professions we want to include. We can make this selection task much easier with the `!` symbol, by writing `filter(data, profession != "...")` and then listing the one profession we want to exclude
+As you know by now, the `!` symbol means *not* and can be used to reverse an operation. 
+
+This operator comes in handy when you want to select all observations that do not fall into a certain category. 
+
+For example, if you have a dataset including a column with professions and you want to exclude one type of profession. 
+It would be tedious to write `filter(data, profession = "...")` and list all professions you want to include. 
+
+Instead, you could make this selection task much easier with the `!` symbol, by writing `filter(data, profession != "...")` and then listing the one profession you want to exclude. 
+
+For this exercise, you will filter the states that are not in the *West* region and store them in a new data frame called `no_west`. 
+
+In the code, you find `levels(murders$region)` command to list the levels in the `region` column. 
 
 *** =instructions
-Create a new data frame called `no_west` that removes states from the West. 
-How many states are in this category? 
+- In the data frame `no_west`, assign the filtered results of `murders` that removes states from the *West*
+- Use `nrow()` function to print the number of states that are in `no_west`
 
 *** =hint
 Use filter and the `!=` operator. You can use `nrow` to quickly get the number of rows of a data frame.
