@@ -5,13 +5,18 @@ description :
 --- type:NormalExercise lang:r xp:100 skills:1 key:4c6d0d3bc3
 ## 1. Scatterplot
 
-In this chapter we practice using basic plotting tools in R. 
+In this chapter, you will practice using basic plotting tools in R. 
 
-We’re using the same dataset as we did in the chapter on `Sorting` - `RatPupWeight`.
+You will use the same dataset as we did in the chapter on `Sorting` - `RatPupWeight`.
+
+The `plot(<x axis>,<y axis>)` function generates a scatter plot of 2 variables, the first variable across the x-axis and the second variable across the y-axis. 
+
+For example, `plot(time, height)` plots `time` variable on the x-axis and `height` variable on y-axis. 
 
 *** =instructions
-- Store the value of the rats' weights in `weight`, and the number of pups per litter in `lsize`.
-- Create a scatterplot of the weights of the ratpups with the size of the litter they were born in.  
+- In `weight`, store the rats' weights `RatPupWeight$weight`
+- In `lsize`, store the number of pups per litter `RatPupWeight$Lsize`
+- Create a scatterplot of the weights of the ratpups (on x-axis) with the size of the litter they were born in (on y-axis)
 
 *** =hint
 
