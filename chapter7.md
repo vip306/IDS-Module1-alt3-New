@@ -148,13 +148,21 @@ success_msg("Good job!")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:555ca41873
 ## 3. Filter 
-Now let us zoom in closer to the states with the highest murder rates. We want to identify the list of states that are part of this unfortunate "top 8". The function `filter` can be used to subset *rows* of a dataset by specifying which values of a certain *column* to select.
+
+From a large data frame, you might want to subset certain *rows* based on a criteria met by one of the columns. 
+
+For example, from a data frame `food` with a column on `calories`, you might want to extract a subset of *rows* with food that has a calorie value less than 100. 
+
+You can do this using the `filter()` function. 
+
+`filter(food, calories < 100)` will help you achieve this operation. 
+
+Now, consider the `murders` dataset. In the previous exercise, you added a new column `rank` that ranked the states based on their murder rates. In this exercise, use the `filter` function to retrieve the *rows* that correspond to the 'unfortunate' top 8 states with the highest murder rates. 
+
 
 *** =instructions
-* Use the function `filter` to show the top 8 states with the highest murder rates. Do not store in `murders`, just show the result.
 
-* To perform the operation, use the `rank` column we created in the previous exercise.
-
+Using `rank` column in the `murders` dataset, `filter` the top 8 states with the highest murder rates
 
 *** =hint
 Use `filter` to select the observations with a `rank` of less than or equal to 8, i.e. `rank <= 8`
