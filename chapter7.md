@@ -237,7 +237,11 @@ In the code, you find `levels(murders$region)` command to list the levels in the
 - Use `nrow()` function to print the number of states that are in `no_west`
 
 *** =hint
-Use filter and the `!=` operator. You can use `nrow` to quickly get the number of rows of a data frame.
+Use filter and the `!=` operator. 
+
+Since `region` is of character data type, you need to use `region != "West"` in the `filter()` function. 
+
+You can use `nrow` to quickly get the number of rows of a data frame.
 
 
 *** =pre_exercise_code
