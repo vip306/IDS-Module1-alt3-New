@@ -235,6 +235,7 @@ In the code, you find `levels(murders$region)` command to list the levels in the
 *** =instructions
 - In the data frame `no_west`, assign the filtered results of `murders` that removes states from the *West*
 - Use `nrow()` function to print the number of states that are in `no_west`
+- Run `no_west` in the console and observe the data frame
 
 *** =hint
 Use filter and the `!=` operator. 
