@@ -374,17 +374,26 @@ success_msg("This is great!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e572c8806a
-## 6. Combining functions 
-You are becoming pretty good at this, so we can become pickier! What if we wanted to live only in certain parts of the country and want the murder rate to be below a certain threshold? No problem - by combining the data manipulation commands we have learned, you can identify such subsets.
+## 6. Combining functions (1)
+
+
+You are becoming pretty good at this. so now, you can do advanced data selection. 
+
+What if you wanted to live only in certain parts of the country and want the murder rate to be below a certain threshold? 
+
+You can filter out the states that meet both these criteria by combining the data manipulation commands you have learnt in the previous exercises. 
+
+You combine the criteria in the `filter` function using the `&` operator. 
+For example, `new_data <- filter(data, condition1 & condition2)` would help you filter the data that meet both 'condition1' and 'condition2'. 
 
 *** =instructions
-* Suppose you want to live in the Northeast or South and want the murder rate to be less than 2. 
+- In a data frame `my_states`, store the filtered states from `murders` dataset with `region` in the "Northeast" or "South" as well as with murder rate less than 2 
+- Use `nrow()` function to print the number of states that are in `my_states`
+- Run `my_states` in the console and observe the data frame 
 
-* Create a table `my_states` with entries that satisfy both of these conditions.
-How many states are in this table?
 
 *** =hint
-Use `filter`, the `%in` operator and the `<` sign. The `&` sign can be used to combine two or more conditions.
+Use `filter`, the `%in%` operator and the `<` sign. The `&` sign can be used to combine two or more conditions.
 
 
 *** =pre_exercise_code
@@ -442,7 +451,7 @@ success_msg("Now you know how to combine functions and use them to get specific 
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:3d4de3a34a
-## 7. Combining functions 2 
+## 7. Combining functions (2)
 To find the number of entries, it is not always necessary to create a new object. To improve efficiency, we can use the pipe (`%>%`) operator, which allows us to run our `filter` and `nrow` operations sequentially, without creating a new dataframe.
 
 *** =instructions
@@ -498,7 +507,7 @@ success_msg("You're getting a pretty good hang of stuff now!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:1b45c7acac
-## 8. Combining functions 3 
+## 8. Combining functions (3)
 You have almost mastered the basics of data manipulation. Now it is time to polish what we have learned so far and become even more efficient. In this exercise, we will use pipes to repeat and combine all the steps we have taken in previous exercises.
 
 
