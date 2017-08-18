@@ -452,12 +452,20 @@ success_msg("Now you know how to combine functions and use them to get specific 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:3d4de3a34a
 ## 7. Combining functions (2)
-To find the number of entries, it is not always necessary to create a new object. To improve efficiency, we can use the pipe (`%>%`) operator, which allows us to run our `filter` and `nrow` operations sequentially, without creating a new dataframe.
+
+To find the number of entries, it is not always necessary to create a new object. 
+
+To improve efficiency, you can use the pipe (`%>%`) operator, which allows you to run `filter` and `nrow` operations sequentially, without creating a new data frame.
+
+In this exercise, you will repeat the previous exercise but instead of creating a new object, you will print the result directly. This result should only have `state`, `rate` and `rank` columns. 
+
+You select these columns using the `select` function in `dplyr`, and using this function with the pipe (`%>%`) operator after the `filter` function. 
+
+For example, `filter(...) %>% select(column1, column2,..)` will print the rows that satisfy the conditions in the `filter` function, and only the columns specified in the `select` function. 
 
 *** =instructions
-* Repeat the previous exercise, but now instead of creating a new object, show the result directly and only include the state, rate, and rank columns. 
-* Use a pipe (`%>%`) to do this in just one line. Remember that you can use `dplyr`'s `select` function to include only certain columns.
-* Reminder: We want to select states in the Northeast and South with a murder rate of less than 2.
+- Use `filter` function to set the criteria of `region` being either "Northeast" or "South" as well as `rate` < 2
+- In the same command, use the pipe (`%>%`) operator and then `select` function to include `state`, `rate`, `rank` columns 
 
 *** =hint
 Use the same `filter` operation as in the previous exercise. Then use the pipe (`%>%`) and add `select(state, rate, rank)`.
