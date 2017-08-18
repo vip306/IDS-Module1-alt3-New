@@ -63,9 +63,13 @@ success_msg("Doesn't that plot look neat!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:4c598008e7
 ## 2. Histogram
 
+A histogram helps you visualize the number of occurences of a range of data. 
+
+In R, you can plot the histogram of a variable using the `hist()` function. It takes the variable as its argument. 
 
 *** =instructions
-Create a histogram of the weights of the rat pups.
+- In `weight`, store the rats' weights `RatPupWeight$weight`
+- Plot the histogram of `weight`
 
 *** =hint
 
@@ -104,16 +108,26 @@ hist(weight)
 test_error()
 test_object("weight", undefined_msg = "Define weight first.", incorrect_msg = "Check code!")
 test_function("hist", incorrect_msg = "Check code again.")
-success_msg("We got a histogram! Awesome!")
+success_msg("You've got a histogram! Awesome!")
 ```
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:126ec89fd8
 ## 3. Boxplot
 
+A boxplot helps you graphically visualize the minimum, first quartile, median, third quartile and maximum in a given dataset. 
+
+The y-axis variable is continuous (eg: weight which can take a range of values) while the x-axis variable is discrete (eg: gender which takes 2 values - male, female). 
+
+The syntax of boxplot is `boxplot(y~x, dataset = <Name of the dataset>)`. 
+
+For example, `boxplot(rain~region, dataset = Weather)` plots the boxplot `rain` on y-axis for different values of `region` on x-axis in the `Weather` dataset. 
 
 *** =instructions
 Generate boxplots of the weights of the pups by sex (`weight~sex`), using one line of code.  
+- In `weight`, store the rats' weights `RatPupWeight$weight`
+- In `sex`, store the rats' sex `RatPupWeight$sex`
+- Plot the boxplot of `weight` of pups by their `sex`, specifying the dataset
 
 *** =hint
 ```{r}
@@ -130,8 +144,7 @@ data(RatPupWeight)
 *** =sample_code
 ```{r}
 # Store values as in previous questions
-weight <- RatPupWeight$weight
-sex <- RatPupWeight$sex
+
 
 # Create a boxplot of weight by sex and specify the dataset
 
