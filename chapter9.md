@@ -6,7 +6,11 @@ description :
 ## 1. Conditional expressions
 
 What will this conditional expression return?
-Run it from the console.
+Run it from the console. 
+
+(Type the commands or copy and paste them in the console, and hit ENTER on your keyboard.)
+
+
 
 ```{r}
 x <- c(1,2,-3,4)
@@ -51,10 +55,11 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 
 Which of the following expressions is always `TRUE` when at least one entry of a logical vector x is `FALSE`?
 
+(You could try an example in the R console.)
+
 
 *** =instructions
 - all(x)
-- any(x)
 - any(!x)
 - all(!x)
 
@@ -68,10 +73,9 @@ Which of the following expressions is always `TRUE` when at least one entry of a
 *** =sct
 ```{r}
 msg1 = "Check the question again. Try an example in the R console."
-msg2 = "Re-read the question! Try an example in the R console."
-msg3 = "Good job! Let us move to the next question."
-msg4 = "Try again! Try an example on the R console."
-test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
+msg2 = "Good job! Let us move to the next question."
+msg3 = "Try again! Try an example on the R console."
+test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3))
 ```
 
 
