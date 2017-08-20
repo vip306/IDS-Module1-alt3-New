@@ -124,7 +124,6 @@ The syntax of boxplot is `boxplot(y~x, dataset = <Name of the dataset>)`.
 For example, `boxplot(rain~region, dataset = Weather)` plots the boxplot `rain` on y-axis for different values of `region` on x-axis in the `Weather` dataset. 
 
 *** =instructions
-Generate boxplots of the weights of the pups by sex (`weight~sex`), using one line of code.  
 - In `weight`, store the rats' weights `RatPupWeight$weight`
 - In `sex`, store the rats' sex `RatPupWeight$sex`
 - Plot the boxplot of `weight` of pups by their `sex`, specifying the dataset
