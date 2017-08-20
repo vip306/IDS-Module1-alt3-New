@@ -155,7 +155,17 @@ success_msg("Whoohoo! You're becoming a pro at this!")
 
 ## 4. Write your own functions
 
-You will encounter situations where the function you need has not been defined in R, but luckily you can write your own function. Let's practice writing a function in R. The functions you define can have multiple arguments as well as default values.
+You will encounter situations where the function you need has not been defined in R. In such cases, you can write your own function. 
+
+In this exercise, you will practice writing a `function` in R. The functions you define can have multiple arguments as well as default values.
+
+Recall that the general syntax of a `function` is
+
+```{r}
+my_function <- function(x){
+operations that operate on x, defined by user of the function, with final line returning the value
+}
+```
 
 *** =instructions
 Create a function `max_total` that takes `murders` as the argument and tells you which state has the most gun murders. Remember to use built-in function `max`.
