@@ -87,18 +87,33 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3))
 --- type:NormalExercise lang:r xp:100 skills:1 key:9e33032243
 ## 3. More conditional expressions
 
+In this exercise, you will use `ifelse()` function to modify a dataframe based on a condition. 
+
+In the `murders` dataset, you will apply `ifelse` on the `state` column, change the names of states to lower case if the states' name begines with "M" or a letter that comes after "M" in the alphabet. If the states' name begins with a letter before "M", keep the states' name as is. 
+
+The functions you would need are: `tolower()` and `cbind()`. 
+
 The function `tolower()` changes all your characters to lower case, for example:
 
 ```{r}
 state_lower <- tolower(murders$state)
-state_lower[1:5]
 ```
+
+The function `cbind()` appends a column to an existing dataset. For example, 
+
+```{r}
+murders <- cbind(murders, new_column)
+```
+
 *** =instructions
 
-Write one line of code using `ifelse` that assigns to the object `new_names` the lower case state name when the state name begins with "M" or a letter that comes after "M" in the alphabet. When the state name begins with a letter before "M", keep the state name.
+- In an object `new_names`, use `ifelse` to assign the lower case state name when the state name begins with "M" or a letter that comes after "M" in the alphabet, and keep the state name, when the name begins with a letter before "M"
+    - Use operators `<`,`>`,`=` etc in the condition to make the comparison
+- Use `cbind()` to append `new_names` to the `murders` dataset
+- In the console, run `murders$new_names` and check how the output has changed
 
 *** =hint
-R uses arithmetic operators (>, <, ==, etc.) to compare the order of characters in the alphabet. Play with it in the R console!
+R uses logical operators (>, <, ==, etc.) to compare the order of characters in the alphabet. Play with it in the R console!
 
 *** =pre_exercise_code
 ```{r}
