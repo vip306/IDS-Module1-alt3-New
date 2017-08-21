@@ -153,7 +153,7 @@ success_msg("Whoohoo! You're becoming a pro at this!")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:8232e54e7b
 
-## 4. Write your own functions
+## 4. Write your own functions (1)
 
 You will encounter situations where the function you need has not been defined in R. In such cases, you can write your own function. 
 
@@ -168,7 +168,10 @@ operations that operate on x, defined by user of the function, with final line r
 ```
 
 *** =instructions
-Create a function `max_total` that takes `murders` as the argument and tells you which state has the most gun murders. Remember to use built-in function `max`.
+- Create a function `max_total` to take `murders` as the argument
+- Within the function, use `max()` to find out the index of the highest `x$total` corresponding to the state with largest number of murders
+- Return the name of the state using this index 
+- Pass `murders` as an argument to the `max_total` function and check the result 
 
 *** =hint
 Use `$` and `[]` on `murders` in the body of your function to determine which state has the most gun murders.
@@ -190,8 +193,15 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 
 *** =solution
 ```{r}
-# Create function max_total
-max_total<-function(x){x[x$total==max(x$total),]$state}
+
+# Create function max_total  
+max_total<-function(x){
+max <- x$total==max(x$total) 
+x$state[max]
+}
+
+# Create function max_total (same function but in one line of code) 
+# max_total<-function(x){x[x$total==max(x$total),]$state}
 
 # Find out the state with the most murders in the murders data set
 max_total(murders)
@@ -218,12 +228,18 @@ success_msg("This is awesome! You just wrote a function in R!")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:eb931680e3
 
-## 5. Write your own functions continued
+## 5. Write your own functions (2)
 
-The functions you define can have multiple arguments as well as default values. Now try write a more complicated function to get information about `murders`.  
+The functions you define can have multiple arguments as well as default values.
+In this exercise, you will write a more complicated function to get information about `murders`. 
+
+Your function will take `murders` as the argument, and for a given value of `n`, will print the names of states that have more than `n` gun murders. Set `n` to a value of `100` in the function. 
 
 *** =instructions
-Create a function `nplus_states` that takes `murders` as an argument and for any given `n`, prints the name of the states that have more than `n` gun murders. Set the default value of `n` to be 100.
+- Create a function `nplus_states` that takes `murders` as an argument 
+- Set `n = 100` along with the argument `x` in the function
+- Within the function, extract the indices of states with that have more than `n` gun murders
+- Print the names of those states
 
 *** =hint
 
@@ -237,14 +253,20 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 # Create function nplus_states
 
 
-# Find out the states in the Western region that have more than 100 gun murders
+# Find out the states that have more than 100 gun murders
 
 ```
 
 *** =solution
 ```{r}
-# Create function dangerous_states
+# Create function nplus_states (in one line) 
 nplus_states<-function(x, n=100){x[x$total>n,]$state}
+
+# Create function nplus_states (in two lines) 
+    # nplus_states<-function(x, n=100){
+    # ind <- x$total >= n
+    # x$state[ind]
+    # }
 
 # Find out the states that have more than 100 gun murders
 nplus_states(murders)
@@ -256,9 +278,9 @@ test_error()
 test_function_definition("nplus_states",
                         function_test = {
                         test_expression_result("nplus_states(murders)")
-		  test_expression_result("nplus_states(murders, 1000)")
+		  test_expression_result("nplus_states(murders, 100)")
                         })
-test_output_contains("rate_per_n(murders)")
+#test_output_contains("rate_per_n(murders)")
 success_msg("This is awesome! You can write much cooler functions now!")
 ```
 
@@ -271,9 +293,7 @@ success_msg("This is awesome! You can write much cooler functions now!")
 
 Keep in mind that variables defined in a function only hold within the function environment and does not affect the value of the variable anywhere else.
 
-*** =instructions
-
-After running the code below, what are the values of `x` and `y`?
+For this exercise, consider the following code: 
 
 ```{r}
 x <- 3
@@ -286,6 +306,16 @@ func2 <- function(x){
 		func1(x)}
 func2(1)
 ```
+
+*** =instructions
+
+- Examine the code above
+- Assuming you run the whole code, find out the value of x and y at the end of the code 
+- Assign those values to x and y in `script.R` section
+- Submit Answer to check if your answer is correct 
+- Run the code below separately to check if your answer was correct 
+
+
 
 *** =hint
 
@@ -304,8 +334,8 @@ Try to answer the question before running the code in the R console!
 
 *** =solution
 ```{r}
-#Assign the right value to x
-x<-7
+#Assign the right value to x and y
+x<-3
 y<-1
 
 ```
