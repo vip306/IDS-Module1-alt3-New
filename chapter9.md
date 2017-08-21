@@ -542,14 +542,20 @@ success_msg("This is great! Let’s go to the last question of this module!")
 
 In this exercise, you will use `for` loop to generate vectors that meet a given condition from the `murders` dataset, and plot those vectors. 
 
+You will need to use the `append()` function, which is used as follows: 
+`x <- append(x, a[2])` will append the element `a[2]` to vector `x`. 
+
+
 *** =instructions
 - Create a function `dangerous` that takes `murders` and `n` as arguments 
 - Define `x`  and `y` as empty vectors
-- Define `data$rate <- data$total/data$population*100000` 
+- Define `data$rate` as `data$total/data$population*100000` 
 - In a `for` loop, compare `data$rate` for each element with `n` using `if` 
     - If it is greater, use `append()` function to append the `data$population[i]` in `x` and `data$total[i]` in `y`
 - End the loop and plot x against y 
-- 
+- Call the function `dangerous` with `(murders, 3)` as arguments where n=3
+
+
 *** =hint
 
 *** =pre_exercise_code
@@ -562,7 +568,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 #  Create the function
 
 
-# Create the plot when n=5
+# Create the plot when n=3
 
 ```
 
@@ -594,7 +600,6 @@ test_error()
 test_function_definition("dangerous",
                         function_test = {
                         test_expression_result("dangerous(murders, 3)")
-                        test_expression_result("dangerous(murders, 5)")
                         },
                         body_test = {
                         test_function("plot")
