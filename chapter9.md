@@ -310,11 +310,10 @@ func2(1)
 *** =instructions
 
 - Examine the code above
-- Assuming you run the whole code, find out the value of x and y at the end of the code 
+- Assuming you run the whole code, find out the values of x and y at the end
 - Assign those values to x and y in `script.R` section
 - Submit Answer to check if your answer is correct 
 - Run the code below separately to check if your answer was correct 
-
 
 
 *** =hint
@@ -355,15 +354,24 @@ success_msg("Good job!")
 
 ## 7. Define a variable within your function
 
-Recall from an earlier exercise that we wrote a function to find out the state with the most gun murders. Let’s now find out the state with the highest gun murder rate.
+Recall from an earlier exercise that you wrote a function to find out the state with the most gun murders. 
 
-When you start writing more complicated functions, you’ll find breaking down the steps and creating new variables along the way to be very helpful. And don’t worry about messing up your working environment because all variables defined within a function are only valid when the function is being called!
+In this exercise, you will find out the state with the highest gun murder rate.
+
+When you start writing more complicated functions, you will find breaking down the steps and creating new variables along the way to be very helpful. 
+
+And don’t worry about messing up your working environment because all variables defined within a function are only valid when the function is being called!
 
 *** =instructions
-Create a function `max_rate` that takes `murders` as the argument and tells you which state has the highest murder rate.
+- Create a function `max_rate` that takes `murders` as the argument 
+- Calculate `x$murder_rate` as `x$total/x$population`
+- Find the index of the highest murder rate 
+- Print the name of the corresponding state 
 
 *** =hint
 Create a new variable `murder_rate` and append it to the `murders` data set so you can use its values in the conditional expression.
+Use the `max()` function. 
+
 
 *** =pre_exercise_code
 ```{r}
@@ -382,7 +390,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 
 *** =solution
 ```{r}
-# Create function max_rate
+# This is a possible sample function. You could achieve the same result with other commands as well. 
 max_rate<-function(x){x$murder_rate<-x$total/x$population
 			    max_murder_rate<-max(x$murder_rate)
                                     row_max_rate<-x[x$murder_rate==max_murder_rate,]
@@ -413,11 +421,15 @@ success_msg("This is awesome! You can write much cooler functions now!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:340b9eba39
 ## 8. Control flow statement: for loop
 
-Recall that in an earlier exercise, you changed the names of states that begins with an "M" or a letter that comes after "M" to lower case using the `ifelse()` function. Now do the same with an `if()` statement and a for loop.  
+Recall that in an earlier exercise, you changed the names of states that begins with an "M" or a letter that comes after "M" to lower case using the `ifelse()` function. 
+
+In this exercise, do the same with an `if()` statement and a `for` loop.  
 
 *** =instructions
-
-Use an `if()` statement and a for loop to assign to the object `new_names2` the lower case state name when the state name starts with "M" or a letter that comes after "M" in the alphabet. When the state name starts with a letter before "M", keep the state name.
+- Create a vector `new_namses2` as an empty vector 
+- Start the `for` loop iterating for as many times as there are rows in `murders` 
+- Using `if` and `else` commands, compare each state's name with "M" as you did in the previous exercise, change them to lower case if they begin with or come after "M", and keep them as is otherwise
+- Print `new_names2`
 
 *** =hint
 Use `i in 1:nrow(murders)` to loop through all rows of the data frame.
@@ -471,12 +483,18 @@ success_msg("Whoohoo! You are becoming a pro at this!")
 
 ## 9. Check matching of values
 
+You used `ifelse()` function and separately, 'for' loop and 'if()` function to achieve the same task of renaming the states based on a given condition. 
+
+In this exercise, you will compare them to check if they are identical or not. You can do this with the `identical()` function. 
+`identical(x,y)` compares x and y, and returns `TRUE` if they are identical. 
+
 *** =instructions
-Confirm that the result of the for loop in the last exercise (`new_names2`) is identical to the result of the `ifelse()` function in exercise 3 (new_names). Both values are pre-loaded into your environment.
+
+- Use `identical()` function to compare `new_names2` and `new_names`. Both values are pre-loaded into your environment.
 
 *** =hint
 
-Do not miss any `*` and `()` when writing code for the formula `n*(n+1)*(2*n+1)/6`.
+
 
 *** =pre_exercise_code
 ```{r}
@@ -522,11 +540,16 @@ success_msg("This is great! Let’s go to the last question of this module!")
 
 ## 10. For loops and plots
 
-Now let’s plot some graphs!  
+In this exercise, you will use `for` loop to generate vectors that meet a given condition from the `murders` dataset, and plot those vectors. 
 
 *** =instructions
-Write a function `dangerous` that defines and plots two vectors `x`  and `y`, where `x` is the population and `y` the total number of murders of all the states with murder rate of greater than `n` per 100,000 people.
-
+- Create a function `dangerous` that takes `murders` and `n` as arguments 
+- Define `x`  and `y` as empty vectors
+- Define `data$rate <- data$total/data$population*100000` 
+- In a `for` loop, compare `data$rate` for each element with `n` using `if` 
+    - If it is greater, use `append()` function to append the `data$population[i]` in `x` and `data$total[i]` in `y`
+- End the loop and plot x against y 
+- 
 *** =hint
 
 *** =pre_exercise_code
@@ -576,5 +599,5 @@ test_function_definition("dangerous",
                         body_test = {
                         test_function("plot")
                         })
-success_msg("Awesome! Let's go to the last exercise in this chapter!")
+success_msg("Awesome! You have completed all the exercises in this chapter!")
 ```
