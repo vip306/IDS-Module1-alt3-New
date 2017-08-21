@@ -553,7 +553,7 @@ You will need to use the `append()` function, which is used as follows:
 - In a `for` loop, compare `data$rate` for each element with `n` using `if` 
     - If it is greater, use `append()` function to append the `data$population[i]` in `x` and `data$total[i]` in `y`
 - End the loop and plot x against y 
-- Call the function `dangerous` with `(murders, 3)` as arguments where n=3
+- Call the function `dangerous` with `(murders, 3)` as arguments where 3 corresponds to argument `n` 
 
 
 *** =hint
