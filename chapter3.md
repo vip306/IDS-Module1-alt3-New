@@ -203,6 +203,8 @@ For this exercise, a dataset `women` is loaded. Follow the instructions to defin
 *** =instructions
 - In an object `weight_rate`, store `women$weight`/ `women$height` 
 - Create a logical vector `low` for the condition `weight_rate < 2`
+- Find the number of elements in `weight_rate` that meet the above condition using `sum()` function
+- Print all the elements in `weight_rate` that meet the above condition using `[]` 
 - Print the logical vector `low` and observe the result
 
 
@@ -227,6 +229,19 @@ data(women)
 # Store the `weight_rate < 2` in `low`
 
 
+# Find the number of elements in `weight_rate` that are less than 2
+
+
+
+# Print the elements in `weight_rate` that meet the condition 
+
+
+
+# Print the logical vector `low`
+
+
+
+
 ```
 
 *** =solution
@@ -237,6 +252,17 @@ weight_rate<-women$weight/women$height
 
 # Store the `weight_rate < 2` in `low`
 low <- weight_rate < 2
+
+# Find the number of elements in `weight_rate` that are less than 2
+sum(low)
+
+# Print the elements in `weight_rate` that meet the condition 
+weight_rate[low]
+
+# Print the logical vector `low`
+low
+
+
 ```
 
 *** =sct
@@ -244,6 +270,9 @@ low <- weight_rate < 2
 test_error()
 test_object("weight_rate", undefined_msg = "Define the weight rate first!", incorrect_msg = "Check the formula.")
 test_object("low", undefined_msg = "Define low!", incorrect_msg = "It should be weight rates less than 2.")
+test_output_contains("sum(low)", incorrect_msg = "Check for syntax of sum(). ")
+test_output_contains("weight_rate[low]", incorrect_msg = "Use square brackets to access the elements that meet the logical condition.")
+#test_object("", undefined_msg = "Define low!", incorrect_msg = "It should be weight rates less than 2.")
 success_msg("Great job!")
 
 ```
