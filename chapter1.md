@@ -14,7 +14,7 @@ Remember, R does not show any results when you store a value. If you make an err
 
 Note how `#` is used to make comments. Comments won't run as code.
 
-Consider this problem: Harry Potter and the Goblet of Fire(part 4) sold $55 million$ copies and Harry Potter and the Deathly Hallows(part 7) sold $50 million$ copies. What is the combined sale of the two books? 
+Consider this problem: The book Harry Potter and the Goblet of Fire(part 4) sold $55 million$ copies and one of its sequel books, Harry Potter and the Deathly Hallows(part 7) sold $50 million$ copies. What is the combined sale of the two books? 
 
 *** =instructions
 - Assign the number of books sold (in millions) to hp4 and hp7 variables 
@@ -79,10 +79,10 @@ You can use the lesser than (<) , greater than (>) and equal to (=) operators, t
 For example, typing `5>5`, would yield the result `FALSE` and typing `6>5`, would yield `TRUE`.
 Remember, in R, to say that `5 is equal to 5`, we need to type `5==5`. The double equal to sign indicates that 5 is equal to 5.
 
-Consider this problem: At the beginning of the Quidditch match, Gryffindor scored 15 points and Hufflepuff, their opponent, scored 165 points. At the last moment, Harry from Gryffindor caught the Snitch for 150 points. Determine if the teams scored equal number of points. 
+Consider this problem: At the beginning of the a match, Team A scored 15 points and Team B, their opponent, scored 165 points. At the last moment, Harry from Team A scored 150 points. Determine if the teams scored equal number of points. 
 
 *** =instructions
-- Assign total scores to `gryffindor` and `hufflepuff` variables
+- Assign total scores to `teamA` and `teamB` variables
 - Use the appropriate operator to compare them
 
 
@@ -99,7 +99,7 @@ Which number is lesser than, greater than or equal to the other?
 
 *** =sample_code
 ```{r}
-# Assign total scores to `gryffindor` and `hufflepuff`
+# Assign total scores to `teamA` and `teamB`
 
 
 # Check and determine the outcome of the match using the correct operator
@@ -109,20 +109,20 @@ Which number is lesser than, greater than or equal to the other?
 
 *** =solution
 ```{r}
-# Assign total scores to `gryffindor` and `hufflepuff`
-gryffindor <- 15 + 150
-hufflepuff <- 165
+# Assign total scores to `teamA` and `teamB`
+teamA <- 15 + 150
+teamB <- 165
 
 # Check and determine the outcome of the match using the correct operator
-gryffindor == hufflepuff
+teamA == teamB
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_object("gryffindor", undefined_msg = "Define gryffindor first.", incorrect_msg = "Add the scores for gryffindor.")
-test_object("hufflepuff", undefined_msg = "Define hufflepuff first.", incorrect_msg = "Store the score for hufflepuff.")
-test_output_contains("gryffindor == hufflepuff", incorrect_msg = "Check whether they are equal.")
+test_object("teamA", undefined_msg = "Define teamA first.", incorrect_msg = "Add the scores for teamA.")
+test_object("teamB", undefined_msg = "Define teamB first.", incorrect_msg = "Store the score for teamB.")
+test_output_contains("teamA == teamB", incorrect_msg = "Check whether they are equal.")
 success_msg("Yes! It was a draw!")
 ```
 ----

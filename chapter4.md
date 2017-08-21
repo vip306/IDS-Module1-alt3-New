@@ -452,8 +452,7 @@ In R, missing values are represented by `NA`.
 
 You can quickly examine the object using:
 
-      - `data(na_example)`  
-      - `str(na_example)`
+     - `str(na_example)`
 
 Function `is.na()` returns a logical `TRUE` or `FALSE` indicating whether a value is `NA`. 
 

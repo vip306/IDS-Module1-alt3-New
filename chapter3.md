@@ -180,6 +180,8 @@ success_msg("Great job! You have now learnt to create a named vector!")
 ```
 ----
 
+
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:7c4dfa097b
 ## 4. Class
 
