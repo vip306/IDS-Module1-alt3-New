@@ -3,10 +3,8 @@ title       : 6. Indexing
 description : R provides a powerful and convenient way of indexing vectors. We're going to learn some ways of doing that!
 
 
-----
-
 --- type:NormalExercise lang:r xp:100 skills:1 key:a76be07302
-## 2. Extracting Indices of a Logical Vector
+## 1. Extracting Indices of a Logical Vector
 
 As you learnt earlier, a logical vector has `TRUE` or `FALSE` elements. 
 
@@ -70,7 +68,7 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:43f34535d7
-## 3. Extracting values of a Vector from Indices
+## 2. Extracting values of a Vector from Indices
 
 Now that you have learnt how to extract the indices of a vector that meet a logical condition, you can access the values of the original vector for those particular indices using square brackets `[]`. 
 
@@ -134,7 +132,7 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a15f758c03
-## 4. Combining logical conditions
+## 3. Combining logical conditions
 
 You can also combine logical conditions using the `&` operator. This helps you extract values of a dataset that satisfy more than one logical condition. 
 
@@ -203,7 +201,7 @@ success_msg("Wasn`t that good! Let`s move to the next one.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f2004ac34f
-## 5. Operations on Logical Conditions
+## 4. Operations on Logical Conditions
 
 Since a logical condition returns a vector of `TRUE` and `FALSE` values, you can perform simple arithmetic operations on this vector. For this purpose, R considers the `TRUE` values as `1` and `FALSE` values as `0`. 
 For example, you could use the `sum()` function to calculate the number of elements meeting the logical condition. 
@@ -264,7 +262,7 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:19320f72ab
-## 6. Match
+## 5. Match
 You will use the `murders` dataset for the next three exercises.
 
 Sometimes, you might want to check if a larger vector has elements that are also present in a smaller vector. 
@@ -326,7 +324,7 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:beea127137
-## 7. %in%
+## 6. %in%
 
 If, instead of a vector of index numbers, you want a logical vector that tells you whether or not each element of a vector is in another vector, you can use the operator `%in%`. 
 
@@ -377,7 +375,7 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:65a74691fd
-## 8. Negation operator 
+## 7. Negation operator 
 
 In the previous exercise you created a logical vector indicating whether the character strings "ND", "NE", "NM", "NN", "NY" are actual state abbreviations in `murders`. 
 
