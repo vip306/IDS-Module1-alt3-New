@@ -179,11 +179,78 @@ test_function("names", incorrect_msg = "The numeric vector should be in the pare
 success_msg("Great job! You have now learnt to create a named vector!")
 ```
 ----
+--- type:NormalExercise lang:r xp:100 skills:1 key:6bb68b8400
+## 4. Logical Vectors
 
+A logical vector contains `TRUE` or `FALSE` values based on a logical criteria you define. 
+
+For example, if `vct = [2,3,4,1,5]` and you want to find which elements of `v` are less than 4, you can create a logical vector with the following command: 
+`lvct <- vct < 4`
+This would result in the logical vector `lvct = [TRUE TRUE FALSE TRUE FALSE]`. 
+
+You can use any of the logical operators `<`, `>` or `=`. 
+
+For the purposes of arithmetic operations, the `TRUE` values are dealt as `1` and `FALSE` values as `0`. 
+
+For example, if you run `sum(lvct)`, the answer will be 3, since there are three `TRUE` values in `lvct`. 
+
+Also, you can access the values of `vct` that satisfy the condition you defined above, using the logical vector `lvct` within square brackets `[]`.
+
+For example, `vct[lvct]` will print `2 3 1` since, `lvct` is `TRUE` only for those values of `vct`. 
+
+For this exercise, a dataset `women` is loaded. Follow the instructions to define and print the logical vector.  
+
+*** =instructions
+- In an object `weight_rate`, store `women$weight`/ `women$height` 
+- Create a logical vector `low` for the condition `weight_rate < 2`
+- Print the logical vector `low` and observe the result
+
+
+*** =hint
+
+
+*** =pre_exercise_code
+```{r}
+library(datasets)
+data(women)
+```
+
+*** =sample_code
+```{r}
+# Load the datasets
+library(datasets)
+data(women)
+
+# Store the weight rate for each tree, in `weight_rate`
+
+
+# Store the `weight_rate < 2` in `low`
+
+
+```
+
+*** =solution
+```{r}
+
+# Store the weight rate for each tree, in `weight_rate`
+weight_rate<-women$weight/women$height
+
+# Store the `weight_rate < 2` in `low`
+low <- weight_rate < 2
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("weight_rate", undefined_msg = "Define the weight rate first!", incorrect_msg = "Check the formula.")
+test_object("low", undefined_msg = "Define low!", incorrect_msg = "It should be weight rates less than 2.")
+success_msg("Great job!")
+
+```
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7c4dfa097b
-## 4. Class
+## 5. Class
 
 When you use R to analyze data, it is always a good practice to keep track of the class of an object. 
 
@@ -229,7 +296,7 @@ success_msg("That's great! Let's use some operators on this data now.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:925fcceb04
-## 5. Indexing Vector Elements (Part 1)
+## 6. Indexing Vector Elements (Part 1)
 
 If you want to display only select values from a vector, R can help you do that easily. 
 
@@ -290,7 +357,7 @@ success_msg("Awesome! You`ve learnt how to make your work easier.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7e98f2ad1b
-## 6. Indexing Vector Elements (Part 2) 
+## 7. Indexing Vector Elements (Part 2) 
 
 In the previous exercise, you used operator `:` to access consective elements in a vector. Now, you will learn to access
 any elements in a vector.
@@ -355,7 +422,7 @@ success_msg("Isn`t that awesome! Let`s move to the next exercise!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:02d64318c8
-## 7. Sequences
+## 8. Sequences
 
 `seq()` is a function in R with which you can easily generate numeric vectors with a certain pattern.
 
@@ -414,7 +481,7 @@ success_msg("Awesome! Let's 'jump' to the next exercise.")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:373b201f36
-## 8. Length of a Vector  
+## 9. Length of a Vector  
 
 Recall that in the last exercise, you created sequences of numeric values within a certain range with a specified increment. 
 
@@ -476,7 +543,7 @@ success_msg("Great job! Looks like you`re getting good with sequences!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c056565056
-## 9. Class: Integer and Numeric
+## 10. Class: Integer and Numeric
 
 To force a number to be recognized as an integer, you need to add the letter L. For example, `12L` would be forced to be represented as an integer.  
 
@@ -529,7 +596,7 @@ success_msg("Great, move on to one more fun thing in this module.")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:1e7c932a3d
-## 10. Coercion
+## 11. Coercion
 
 As mentioned before, it is always good practice to keep track of the class of objects in R. When an element in R does not match the expected class, R usually tries to guess what you mean before throwing an error. That might create confusion or result in undetected mistakes. 
 
